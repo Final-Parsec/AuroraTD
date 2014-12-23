@@ -1,0 +1,409 @@
+fileFormatVersion: 2
+guid: e395287f58bd99c47882000e01142b48
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Towers_0
+    21300002: Towers_1
+    21300004: Towers_2
+    21300006: Towers_3
+    21300008: Towers_4
+    21300010: Towers_5
+    21300012: Towers_6
+    21300014: Towers_7
+    21300016: Towers_8
+    21300018: Towers_9
+    21300020: Towers_10
+    21300022: Towers_11
+    21300024: Towers_12
+    21300026: Towers_13
+    21300028: Towers_14
+    21300030: Towers_15
+    21300032: Towers_16
+    21300034: Towers_17
+    21300036: Towers_18
+    21300038: Towers_19
+    21300040: Towers_20
+    21300042: Towers_21
+    21300044: Towers_22
+    21300046: Towers_23
+    21300048: Towers_24
+    21300050: Towers_25
+    21300052: Towers_26
+    21300054: Towers_27
+    21300056: Towers_28
+    21300058: Towers_29
+    21300060: Towers_30
+    21300062: Towers_31
+    21300064: Towers_32
+    21300066: Towers_33
+    21300068: Towers_34
+    21300070: Towers_35
+    21300072: Towers_36
+    21300074: Towers_37
+    21300076: Towers_38
+    21300078: Towers_39
+    21300080: Towers_40
+    21300082: Towers_41
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 42
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Towers_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 929
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_1
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 886
+        width: 77
+        height: 116
+      alignment: 9
+      pivot: {x: .5, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_2
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 843
+        width: 77
+        height: 160
+      alignment: 9
+      pivot: {x: .5, y: .200000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_3
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 802
+        width: 77
+        height: 204
+      alignment: 9
+      pivot: {x: .5, y: .170000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_4
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 935
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_5
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 893
+        width: 77
+        height: 115
+      alignment: 9
+      pivot: {x: .5, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_6
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 847
+        width: 77
+        height: 158
+      alignment: 9
+      pivot: {x: .5, y: .200000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_7
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 804
+        width: 77
+        height: 201
+      alignment: 9
+      pivot: {x: .5, y: .170000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_8
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 718
+        width: 77
+        height: 201
+      alignment: 9
+      pivot: {x: .5, y: .170000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_9
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 720
+        width: 77
+        height: 158
+      alignment: 9
+      pivot: {x: .5, y: .200000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_10
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 721
+        width: 77
+        height: 115
+      alignment: 9
+      pivot: {x: .4856821, y: .317853063}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_11
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 722
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_12
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 723
+        width: 77
+        height: 200
+      alignment: 9
+      pivot: {x: .5, y: .170000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_13
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 724
+        width: 77
+        height: 157
+      alignment: 9
+      pivot: {x: .5, y: .200000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_14
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 725
+        width: 77
+        height: 115
+      alignment: 9
+      pivot: {x: .5, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_15
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 726
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_16
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 634
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_17
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 591
+        width: 77
+        height: 116
+      alignment: 9
+      pivot: {x: .5, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_18
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 548
+        width: 77
+        height: 160
+      alignment: 9
+      pivot: {x: .5, y: .200000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_19
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 507
+        width: 77
+        height: 204
+      alignment: 9
+      pivot: {x: .5, y: .170000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_20
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 640
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_21
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 598
+        width: 77
+        height: 115
+      alignment: 9
+      pivot: {x: .5, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_22
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 552
+        width: 77
+        height: 158
+      alignment: 9
+      pivot: {x: .5, y: .200000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_23
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 509
+        width: 77
+        height: 201
+      alignment: 9
+      pivot: {x: .5, y: .170000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_24
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 423
+        width: 77
+        height: 201
+      alignment: 9
+      pivot: {x: .5, y: .170000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_25
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 425
+        width: 77
+        height: 158
+      alignment: 9
+      pivot: {x: .5, y: .200000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_26
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 426
+        width: 77
+        height: 115
+      alignment: 9
+      pivot: {x: .5, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_27
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 427
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_28
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 428
+        width: 77
+        height: 200
+      alignment: 9
+      pivot: {x: .5, y: .170000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_29
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 429
+        width: 77
+        height: 157
+      alignment: 9
+      pivot: {x: .5, y: .200000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_30
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 430
+        width: 77
+        height: 115
+      alignment: 9
+      pivot: {x: .5, y: .300000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Towers_31
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 431
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

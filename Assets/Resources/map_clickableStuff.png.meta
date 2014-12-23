@@ -1,0 +1,1763 @@
+fileFormatVersion: 2
+guid: 3f7d6708e9fff7046a96dfe1b891e47b
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: map_clickableStuff_0
+    21300002: map_clickableStuff_1
+    21300004: map_clickableStuff_2
+    21300006: map_clickableStuff_3
+    21300008: map_clickableStuff_4
+    21300010: map_clickableStuff_5
+    21300012: map_clickableStuff_6
+    21300014: map_clickableStuff_7
+    21300016: map_clickableStuff_8
+    21300018: map_clickableStuff_9
+    21300020: map_clickableStuff_10
+    21300022: map_clickableStuff_11
+    21300024: map_clickableStuff_12
+    21300026: map_clickableStuff_13
+    21300028: map_clickableStuff_14
+    21300030: map_clickableStuff_15
+    21300032: map_clickableStuff_16
+    21300034: map_clickableStuff_17
+    21300036: map_clickableStuff_18
+    21300038: map_clickableStuff_19
+    21300040: map_clickableStuff_20
+    21300042: map_clickableStuff_21
+    21300044: map_clickableStuff_22
+    21300046: map_clickableStuff_23
+    21300048: map_clickableStuff_24
+    21300050: map_clickableStuff_25
+    21300052: map_clickableStuff_26
+    21300054: map_clickableStuff_27
+    21300056: map_clickableStuff_28
+    21300058: map_clickableStuff_29
+    21300060: map_clickableStuff_30
+    21300062: map_clickableStuff_31
+    21300064: map_clickableStuff_32
+    21300066: map_clickableStuff_33
+    21300068: map_clickableStuff_34
+    21300070: map_clickableStuff_35
+    21300072: map_clickableStuff_36
+    21300074: map_clickableStuff_37
+    21300076: map_clickableStuff_38
+    21300078: map_clickableStuff_39
+    21300080: map_clickableStuff_40
+    21300082: map_clickableStuff_41
+    21300084: map_clickableStuff_42
+    21300086: map_clickableStuff_43
+    21300088: map_clickableStuff_44
+    21300090: map_clickableStuff_45
+    21300092: map_clickableStuff_46
+    21300094: map_clickableStuff_47
+    21300096: map_clickableStuff_48
+    21300098: map_clickableStuff_49
+    21300100: map_clickableStuff_50
+    21300102: map_clickableStuff_51
+    21300104: map_clickableStuff_52
+    21300106: map_clickableStuff_53
+    21300108: map_clickableStuff_54
+    21300110: map_clickableStuff_55
+    21300112: map_clickableStuff_56
+    21300114: map_clickableStuff_57
+    21300116: map_clickableStuff_58
+    21300118: map_clickableStuff_59
+    21300120: map_clickableStuff_60
+    21300122: map_clickableStuff_61
+    21300124: map_clickableStuff_62
+    21300126: map_clickableStuff_63
+    21300128: map_clickableStuff_64
+    21300130: map_clickableStuff_65
+    21300132: map_clickableStuff_66
+    21300134: map_clickableStuff_67
+    21300136: map_clickableStuff_68
+    21300138: map_clickableStuff_69
+    21300140: map_clickableStuff_70
+    21300142: map_clickableStuff_71
+    21300144: map_clickableStuff_72
+    21300146: map_clickableStuff_73
+    21300148: map_clickableStuff_74
+    21300150: map_clickableStuff_75
+    21300152: map_clickableStuff_76
+    21300154: map_clickableStuff_77
+    21300156: map_clickableStuff_78
+    21300158: map_clickableStuff_79
+    21300160: map_clickableStuff_80
+    21300162: map_clickableStuff_81
+    21300164: map_clickableStuff_82
+    21300166: map_clickableStuff_83
+    21300168: map_clickableStuff_84
+    21300170: map_clickableStuff_85
+    21300172: map_clickableStuff_86
+    21300174: map_clickableStuff_87
+    21300176: map_clickableStuff_88
+    21300178: map_clickableStuff_89
+    21300180: map_clickableStuff_90
+    21300182: map_clickableStuff_91
+    21300184: map_clickableStuff_92
+    21300186: map_clickableStuff_93
+    21300188: map_clickableStuff_94
+    21300190: map_clickableStuff_95
+    21300192: map_clickableStuff_96
+    21300194: map_clickableStuff_97
+    21300196: map_clickableStuff_98
+    21300198: map_clickableStuff_99
+    21300200: map_clickableStuff_100
+    21300202: map_clickableStuff_101
+    21300204: map_clickableStuff_102
+    21300206: map_clickableStuff_103
+    21300208: map_clickableStuff_104
+    21300210: map_clickableStuff_105
+    21300212: map_clickableStuff_106
+    21300214: map_clickableStuff_107
+    21300216: map_clickableStuff_108
+    21300218: map_clickableStuff_109
+    21300220: map_clickableStuff_110
+    21300222: map_clickableStuff_111
+    21300224: map_clickableStuff_112
+    21300226: map_clickableStuff_113
+    21300228: map_clickableStuff_114
+    21300230: map_clickableStuff_115
+    21300232: map_clickableStuff_116
+    21300234: map_clickableStuff_117
+    21300236: map_clickableStuff_118
+    21300238: map_clickableStuff_119
+    21300240: map_clickableStuff_120
+    21300242: map_clickableStuff_121
+    21300244: map_clickableStuff_122
+    21300246: map_clickableStuff_123
+    21300248: map_clickableStuff_124
+    21300250: map_clickableStuff_125
+    21300252: map_clickableStuff_126
+    21300254: map_clickableStuff_127
+    21300256: map_clickableStuff_128
+    21300258: map_clickableStuff_129
+    21300260: map_clickableStuff_130
+    21300262: map_clickableStuff_131
+    21300264: map_clickableStuff_132
+    21300266: map_clickableStuff_133
+    21300268: map_clickableStuff_134
+    21300270: map_clickableStuff_135
+    21300272: map_clickableStuff_136
+    21300274: map_clickableStuff_137
+    21300276: map_clickableStuff_138
+    21300278: map_clickableStuff_139
+    21300280: map_clickableStuff_140
+    21300282: map_clickableStuff_141
+    21300284: map_clickableStuff_142
+    21300286: map_clickableStuff_143
+    21300288: map_clickableStuff_144
+    21300290: map_clickableStuff_145
+    21300292: map_clickableStuff_146
+    21300294: map_clickableStuff_147
+    21300296: map_clickableStuff_148
+    21300298: map_clickableStuff_149
+    21300300: map_clickableStuff_150
+    21300302: map_clickableStuff_151
+    21300304: map_clickableStuff_152
+    21300306: map_clickableStuff_153
+    21300308: map_clickableStuff_154
+    21300310: map_clickableStuff_155
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: map_clickableStuff_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1217
+        width: 117
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_1
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 1211
+        width: 126
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_2
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1226
+        width: 88
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_3
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 1222
+        width: 71
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_4
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 1223
+        width: 176
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_5
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1236
+        width: 85
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_6
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 1234
+        width: 69
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_7
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 1235
+        width: 71
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_8
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 1235
+        width: 85
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_9
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 1236
+        width: 86
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_10
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 1236
+        width: 85
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_11
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 1235
+        width: 86
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_12
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 1236
+        width: 62
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_13
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1111
+        width: 86
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_14
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1103
+        width: 151
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_15
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1109
+        width: 82
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_16
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 1117
+        width: 103
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_17
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 1120
+        width: 126
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_18
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1114
+        width: 143
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_19
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 1125
+        width: 65
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_20
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1125
+        width: 65
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_21
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1122
+        width: 77
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_22
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 1124
+        width: 77
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_23
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 1126
+        width: 77
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_24
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 1126
+        width: 77
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_25
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 1121
+        width: 56
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_26
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 983
+        width: 91
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_27
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 985
+        width: 111
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_28
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 995
+        width: 62
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_29
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 1002
+        width: 144
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_30
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 1001
+        width: 126
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_31
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 1003
+        width: 62
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_32
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 1012
+        width: 63
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_33
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1015
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_34
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1016
+        width: 77
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_35
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 1019
+        width: 78
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_36
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 1019
+        width: 78
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_37
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 1023
+        width: 79
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_38
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 1020
+        width: 43
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_39
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 856
+        width: 87
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_40
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 827
+        width: 152
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_41
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 848
+        width: 63
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_42
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 872
+        width: 69
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_43
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 872
+        width: 103
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_44
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 860
+        width: 61
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_45
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 884
+        width: 69
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_46
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 888
+        width: 69
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_47
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 893
+        width: 85
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_48
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 893
+        width: 86
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_49
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 891
+        width: 86
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_50
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 891
+        width: 88
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_51
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 892
+        width: 44
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_52
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 746
+        width: 102
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_53
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 747
+        width: 97
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_54
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 750
+        width: 95
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_55
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 750
+        width: 93
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_56
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 754
+        width: 77
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_57
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 766
+        width: 74
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_58
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 759
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_59
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 758
+        width: 49
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_60
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 758
+        width: 71
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_61
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 769
+        width: 48
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_62
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 770
+        width: 56
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_63
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 762
+        width: 57
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_64
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 766
+        width: 81
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_65
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 747
+        width: 75
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_66
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 749
+        width: 95
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_67
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 635
+        width: 98
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_68
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 633
+        width: 105
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_69
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 631
+        width: 81
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_70
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 632
+        width: 65
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_71
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 635
+        width: 39
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_72
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 636
+        width: 32
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_73
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 643
+        width: 28
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_74
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 645
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_75
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 676
+        width: 45
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_76
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 673
+        width: 51
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_77
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 651
+        width: 39
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_78
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 682
+        width: 56
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_79
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 685
+        width: 92
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_80
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 694
+        width: 58
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_81
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 677
+        width: 109
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_82
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 677
+        width: 93
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_83
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 681
+        width: 73
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_84
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 641
+        width: 53
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_85
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 631
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_86
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 565
+        width: 45
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_87
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 558
+        width: 53
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_88
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 588
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_89
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 558
+        width: 37
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_90
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 567
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_91
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 567
+        width: 53
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_92
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 571
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_93
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 567
+        width: 97
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_94
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 563
+        width: 36
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_95
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 602
+        width: 52
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_96
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 603
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_97
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 603
+        width: 48
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_98
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 563
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_99
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 565
+        width: 87
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_100
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 567
+        width: 37
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_101
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 572
+        width: 11
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_102
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 566
+        width: 96
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_103
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 563
+        width: 44
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_104
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 563
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_105
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 565
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_106
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 563
+        width: 43
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_107
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 563
+        width: 44
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_108
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 565
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_109
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 485
+        width: 93
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_110
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 480
+        width: 95
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_111
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 481
+        width: 134
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_112
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 486
+        width: 79
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_113
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 489
+        width: 102
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_114
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 494
+        width: 68
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_115
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 485
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_116
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 484
+        width: 77
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_117
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 489
+        width: 75
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_118
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 486
+        width: 72
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_119
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 481
+        width: 71
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_120
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 489
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_121
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 481
+        width: 69
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_122
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 420
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_123
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 419
+        width: 57
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_124
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 417
+        width: 52
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_125
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 419
+        width: 61
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_126
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 419
+        width: 46
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_127
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 419
+        width: 37
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_128
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 423
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_129
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 423
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_130
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 419
+        width: 84
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_131
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 416
+        width: 69
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_132
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 416
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_133
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 421
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_134
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 420
+        width: 24
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_135
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 424
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_136
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 424
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_137
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 424
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_138
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 421
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_139
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 416
+        width: 37
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_140
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 419
+        width: 33
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_141
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 419
+        width: 22
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_142
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 420
+        width: 21
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_143
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 420
+        width: 21
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_144
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 420
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_145
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 420
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_146
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 351
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_147
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 329
+        width: 100
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_148
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 306
+        width: 158
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_149
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 321
+        width: 130
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_150
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 325
+        width: 139
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_151
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 321
+        width: 143
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_152
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 306
+        width: 144
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_153
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 318
+        width: 98
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_154
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 333
+        width: 101
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: map_clickableStuff_155
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 326
+        width: 72
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

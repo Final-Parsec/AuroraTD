@@ -1,0 +1,399 @@
+fileFormatVersion: 2
+guid: 116fe3820bb6fd244bee6047375cd44c
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SignalSprite_0
+    21300002: SignalSprite_1
+    21300004: SignalSprite_2
+    21300006: SignalSprite_3
+    21300008: SignalSprite_4
+    21300010: SignalSprite_5
+    21300012: SignalSprite_6
+    21300014: SignalSprite_7
+    21300016: SignalSprite_8
+    21300018: SignalSprite_9
+    21300020: SignalSprite_10
+    21300022: SignalSprite_11
+    21300024: SignalSprite_12
+    21300026: SignalSprite_13
+    21300028: SignalSprite_14
+    21300030: SignalSprite_15
+    21300032: SignalSprite_16
+    21300034: SignalSprite_17
+    21300036: SignalSprite_18
+    21300038: SignalSprite_19
+    21300040: SignalSprite_20
+    21300042: SignalSprite_21
+    21300044: SignalSprite_22
+    21300046: SignalSprite_23
+    21300048: SignalSprite_24
+    21300050: SignalSprite_25
+    21300052: SignalSprite_26
+    21300054: SignalSprite_27
+    21300056: SignalSprite_28
+    21300058: SignalSprite_29
+    21300060: SignalSprite_30
+    21300062: SignalSprite_31
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SignalSprite_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 446
+        width: 48
+        height: 103
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_1
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 444
+        width: 48
+        height: 99
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_2
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 439
+        width: 48
+        height: 106
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_3
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 430
+        width: 48
+        height: 103
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_4
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 425
+        width: 48
+        height: 107
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_5
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 426
+        width: 48
+        height: 99
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_6
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 436
+        width: 48
+        height: 98
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_7
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 431
+        width: 48
+        height: 107
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_8
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 429
+        width: 48
+        height: 112
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_9
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 431
+        width: 48
+        height: 114
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_10
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 435
+        width: 48
+        height: 112
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_11
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 433
+        width: 48
+        height: 116
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_12
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 303
+        width: 48
+        height: 104
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_13
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 301
+        width: 48
+        height: 103
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_14
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 296
+        width: 48
+        height: 108
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_15
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 292
+        width: 48
+        height: 98
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_16
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 288
+        width: 48
+        height: 122
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_17
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 286
+        width: 48
+        height: 121
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_18
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 279
+        width: 48
+        height: 121
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_19
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 275
+        width: 48
+        height: 120
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_20
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 287
+        width: 48
+        height: 119
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_21
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 286
+        width: 48
+        height: 120
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_22
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 287
+        width: 48
+        height: 122
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_23
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 289
+        width: 48
+        height: 120
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_24
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 290
+        width: 48
+        height: 123
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_25
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 291
+        width: 48
+        height: 117
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_26
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 171
+        width: 48
+        height: 123
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_27
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 163
+        width: 48
+        height: 120
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_28
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 162
+        width: 48
+        height: 122
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_29
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 160
+        width: 48
+        height: 120
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_30
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 159
+        width: 48
+        height: 123
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignalSprite_31
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 156
+        width: 48
+        height: 123
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

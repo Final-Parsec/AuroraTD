@@ -1,0 +1,311 @@
+fileFormatVersion: 2
+guid: 0e0dadd8a0aa2e24a9cb5d54708731ca
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: spider08_4
+    21300002: spider08_5
+    21300004: spider08_6
+    21300006: spider08_7
+    21300008: spider08_8
+    21300010: spider08_9
+    21300012: spider08_14
+    21300014: spider08_15
+    21300016: spider08_16
+    21300018: spider08_17
+    21300020: spider08_18
+    21300022: spider08_19
+    21300024: spider08_24
+    21300026: spider08_25
+    21300028: spider08_26
+    21300030: spider08_27
+    21300032: spider08_28
+    21300034: spider08_29
+    21300036: spider08_34
+    21300038: spider08_35
+    21300040: spider08_36
+    21300042: spider08_37
+    21300044: spider08_38
+    21300046: spider08_39
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 16
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: spider08_4
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 269
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_5
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 268
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_6
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 269
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_7
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 269
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_8
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 268
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_9
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 269
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_14
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 205
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_15
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 205
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_16
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 205
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_17
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 205
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_18
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 206
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_19
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 205
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_24
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 139
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_25
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 136
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_26
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 139
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_27
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 139
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_28
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 136
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_29
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 139
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_34
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 77
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_35
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 78
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_36
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 77
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_37
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 77
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_38
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 77
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spider08_39
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 77
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
