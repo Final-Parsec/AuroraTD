@@ -6,6 +6,8 @@ You are an Inuit shaman sworn to protect Tomkin, the home of the spirits. Tonrar
 
 [Play Aurora TD for Free Online](http://finalparsec.com/category/tower-defense.html)
 
+Numerous tutorials are available on our website and Youtube channel discussing how this project was built. We strongly encourage you to take a look there if you're curious about how something has been implemented.
+
 ![Feature Graphic](http://finalparsec.com/theme/images/tower_defense_feature_graphic.png "feature graphic")
 
 #### App Stores
@@ -21,7 +23,6 @@ You are an Inuit shaman sworn to protect Tomkin, the home of the spirits. Tonrar
 * NGUI
 
 ## Contact
-#### Final Parsec
 * Homepage: [finalparsec.com](http://finalparsec.com)
 * Twitter: [@Final_Parsec](https://twitter.com/Final_Parsec "@Final_Parsec on twitter")
 * YouTube: [Tutorials & Streams](https://www.youtube.com/channel/UCHcxGunEdEPlgq5JulJ2fYQ "Final Parsec on Youtube")
