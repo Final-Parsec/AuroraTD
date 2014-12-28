@@ -1,6 +1,6 @@
 Aurora Tower Defense
 ======
-**Aurora TD** is an isometric tower defense game built in with Unity3d.
+**Aurora TD** is an isometric tower defense game built with Unity3d.
 
 You are an Inuit shaman sworn to protect Tomkin, the home of the spirits. Tonrar, the evil spirit, is attempting to bring darkness to the ice caps. You must repel his forces by building totems, magical defenses which are empowered by the elements. As the evil forces grow in strength and numbers, darkness will overtake the northern lights. Fight back by strategically placing totem poles with magical abilities! Invoke the power of the spirits! Salaksartok!
 
