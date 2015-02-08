@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Hard : MonoBehaviour {
+public class Forty : MonoBehaviour {
 	MainMenu _Menu;
 	// Use this for initialization
 	void Start () {
@@ -25,10 +25,7 @@ public class Hard : MonoBehaviour {
 	/// </summary>
 	void OnMouseUp(){
 		renderer.material.color = Color.white;
-		_Menu.gameState.PlayerHealth = 20;
-		_Menu.gameState.playerMoney = 100;
-        _Menu.gameState.dificultyFactor = .4f;
-        _Menu.GoToWaveSelection();
+        _Menu.gameState.numberOfWaves = 40;
+		_Menu.GoToGame();
 	}
-	
 }

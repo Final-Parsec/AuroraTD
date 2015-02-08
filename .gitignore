@@ -1,0 +1,12 @@
+Library
+obj
+ProjectSettings
+Temp
+
+*.csproj
+ *.unityproj
+ *.user
+ *.userprefs
+ *.DS_store
+*.sln
+*.suo

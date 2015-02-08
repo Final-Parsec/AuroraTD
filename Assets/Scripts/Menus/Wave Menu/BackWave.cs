@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Hard : MonoBehaviour {
+public class BackWave : MonoBehaviour {
 	MainMenu _Menu;
 	// Use this for initialization
 	void Start () {
@@ -19,16 +19,13 @@ public class Hard : MonoBehaviour {
 	void OnMouseDown(){
 		renderer.material.color = Color.red;
 	}
-	
+
 	/// <summary>
 	/// Raises the mouse up event.
 	/// </summary>
 	void OnMouseUp(){
 		renderer.material.color = Color.white;
-		_Menu.gameState.PlayerHealth = 20;
-		_Menu.gameState.playerMoney = 100;
-        _Menu.gameState.dificultyFactor = .4f;
-        _Menu.GoToWaveSelection();
+        _Menu.GoToDifficultySelection();
 	}
 	
 }

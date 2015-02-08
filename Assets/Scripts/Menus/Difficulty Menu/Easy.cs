@@ -28,6 +28,6 @@ public class Easy : MonoBehaviour {
 		_Menu.gameState.PlayerHealth = 100;
 		_Menu.gameState.playerMoney = 200;
         _Menu.gameState.dificultyFactor = .2f;
-		_Menu.GoToGame();
+        _Menu.GoToWaveSelection();
 	}
 }

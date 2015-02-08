@@ -48,9 +48,15 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	public void GoToDifficultySelection(){
-		_camera.setTargetPosition (new Vector3 (50, 20, -5));
+		_camera.setTargetPosition (new Vector3 (39, 29, -5));
 		menuNum = 3;
 	}
+
+    public void GoToWaveSelection()
+    {
+        _camera.setTargetPosition(new Vector3(55, 15, -5));
+        menuNum = 4;
+    }
 
 	public void GoToGame(){
 		ObjectManager objectManager = ObjectManager.GetInstance();

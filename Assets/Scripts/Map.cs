@@ -32,7 +32,6 @@ public class Map : MonoBehaviour
 	public List<Wave> currentWaves = new List<Wave> ();
 	public float waveSpawnDelay = 25;
 	private float nextWaveSpawnEvent;
-	private int numberOfWaves = 80;
 	public bool playerTriggeredWave;
 
 	void Awake()
@@ -99,7 +98,8 @@ public class Map : MonoBehaviour
 		int random;
 		Wave wave;
 
-		for (int x = 1; x < numberOfWaves; x++) {
+        for (int x = 1; x < _ObjectManager.gameState.numberOfWaves; x++)
+        {
 			if (x % 10 == 0) {
 				random = UnityEngine.Random.Range ((int)BossType.Start+1, (int)BossType.Max);
 				wave = new Wave ((BossType)random, 1f, 1);
