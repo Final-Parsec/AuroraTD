@@ -17,14 +17,14 @@ public class Right2 : MonoBehaviour {
 	/// Raises the mouse Down event.
 	/// </summary>
 	void OnMouseDown(){
-		renderer.material.color = Color.gray;
+		GetComponent<Renderer>().material.color = Color.gray;
 	}
 	
 	/// <summary>
 	/// Raises the mouse up event.
 	/// </summary>
 	void OnMouseUp(){
-		renderer.material.color = Color.white;
+		GetComponent<Renderer>().material.color = Color.white;
 		_Menu.GoToTutorialThree();
 		Debug.Log ("Right2");
 	}

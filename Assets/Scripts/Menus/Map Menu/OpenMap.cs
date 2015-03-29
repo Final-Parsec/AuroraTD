@@ -17,7 +17,7 @@ public class OpenMap : MonoBehaviour {
 	/// Raises the mouse Down event.
 	/// </summary>
 	void OnMouseDown(){
-		renderer.material.color = Color.red;
+		GetComponent<Renderer>().material.color = Color.red;
 	}
 	
 	/// <summary>
@@ -25,7 +25,7 @@ public class OpenMap : MonoBehaviour {
 	/// </summary>
 	void OnMouseUp()
 	{
-		renderer.material.color = Color.white;
+		GetComponent<Renderer>().material.color = Color.white;
 		_Menu.gameState.MapType = MapType.Empty;
 		_Menu.GoToDifficultySelection();
 	}

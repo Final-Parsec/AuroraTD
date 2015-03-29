@@ -17,14 +17,14 @@ public class HelpText : MonoBehaviour {
 	/// Raises the mouse Down event.
 	/// </summary>
 	void OnMouseDown(){
-		renderer.material.color = Color.blue;
+		GetComponent<Renderer>().material.color = Color.blue;
 	}
 	
 	/// <summary>
 	/// Raises the mouse up event.
 	/// </summary>
 	void OnMouseUp(){
-		renderer.material.color = Color.white;
+		GetComponent<Renderer>().material.color = Color.white;
 		_Menu.GoToTutorialOne();
 		Debug.Log ("Help1");
 	}

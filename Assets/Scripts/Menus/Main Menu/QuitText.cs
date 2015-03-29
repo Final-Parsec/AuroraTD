@@ -17,14 +17,14 @@ public class QuitText : MonoBehaviour {
 	/// Raises the mouse Down event.
 	/// </summary>
 	void OnMouseDown(){
-		renderer.material.color = Color.red;
+		GetComponent<Renderer>().material.color = Color.red;
 	}
 	
 	/// <summary>
 	/// Raises the mouse up event.
 	/// </summary>
 	void OnMouseUp(){
-		renderer.material.color = Color.white;
+		GetComponent<Renderer>().material.color = Color.white;
 		_Menu.Quit();
 		Debug.Log ("quit");
 	}

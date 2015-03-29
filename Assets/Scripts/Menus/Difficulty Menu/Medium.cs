@@ -21,7 +21,7 @@ public class Medium : MonoBehaviour
     /// </summary>
     void OnMouseDown()
     {
-        renderer.material.color = Color.red;
+        GetComponent<Renderer>().material.color = Color.red;
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ public class Medium : MonoBehaviour
     /// </summary>
     void OnMouseUp()
     {
-        renderer.material.color = Color.white;
+        GetComponent<Renderer>().material.color = Color.white;
         _Menu.gameState.PlayerHealth = 50;
         _Menu.gameState.playerMoney = 100;
         _Menu.gameState.dificultyFactor = .3f;
