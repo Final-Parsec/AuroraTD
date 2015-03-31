@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class GoToMainMenu : MonoBehaviour {
-
+	
 	private ObjectManager _ObjectManager;
 	
 	void Start()
@@ -12,7 +12,7 @@ public class GoToMainMenu : MonoBehaviour {
 	
 	void OnClick ()
 	{
-        _ObjectManager.DestroySinglton();
+		_ObjectManager.DestroySinglton();
 		Application.LoadLevel("Main Menu");
 	}
 }

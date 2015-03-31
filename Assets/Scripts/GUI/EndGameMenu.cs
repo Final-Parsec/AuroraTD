@@ -44,4 +44,13 @@ public class EndGameMenu : MonoBehaviour {
 
 		objectManager.gameState.gameOver = true;
 	}
+
+	public Vector2 GoAway()
+	{
+		Vector3 newTransform = new Vector3 (9999f, 9999f, 9999f);
+		Vector2 curPos = new Vector2(transform.position.x, transform.position.y);
+		transform.position = newTransform;
+		return curPos;
+
+	}
 }
