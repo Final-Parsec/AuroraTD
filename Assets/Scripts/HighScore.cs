@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class HighScore : MonoBehaviour {
+	UILabel listOfNames;
+	UILabel listOfScores;
+
 
 	// Use this for initialization
 	public string url = "http://localhost:5000/scores/ASS?limit=10";
@@ -16,13 +19,15 @@ public class HighScore : MonoBehaviour {
 		//Debug.Log(N["competitors"][0]["rank"].AsInt);
 		Debug.Log (N ["competitors"].Count);
 		for(int x=0; x< N["competitors"].Count; x++) {
-			Debug.Log (N["competitors"][x]["rank"].AsInt);
+			listOfNames.text = listOfNames.text + "\n" + N["competitors"][x]["rank"].AsInt.ToString();
 			Debug.Log (N["competitors"][x]["score"].AsInt);
 			Debug.Log (N["competitors"][x]["player_name"].Value);
 		}
 	}
 
 	void Start(){
+		listOfNames = GameObject.Find ("NamesList").GetComponent<UILabel>();
+		listOfNames = GameObject.Find ("ScoresList").GetComponent<UILabel>();
 		StartCoroutine (SendRequest ());
 
 	}
