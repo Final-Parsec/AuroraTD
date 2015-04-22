@@ -20,8 +20,8 @@ public class HighScore : MonoBehaviour {
 		Debug.Log (N ["competitors"].Count);
 		for(int x=0; x< N["competitors"].Count; x++) {
 			listOfNames.text = listOfNames.text + "\n" + N["competitors"][x]["rank"].AsInt.ToString();
-			Debug.Log (N["competitors"][x]["score"].AsInt);
-			Debug.Log (N["competitors"][x]["player_name"].Value);
+			//Debug.Log (N["competitors"][x]["score"].AsInt);
+			//Debug.Log (N["competitors"][x]["player_name"].Value);
 		}
 	}
 
