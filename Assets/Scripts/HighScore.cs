@@ -5,9 +5,8 @@ public class HighScore : MonoBehaviour {
 	UILabel listOfNames;
 	UILabel listOfScores;
 
-
 	// Use this for initialization
-	public string url = "http://localhost:5000/scores/ASS?limit=10";
+	public string url = "http://api.finalparsec.com/scores/test;";
 	IEnumerator SendRequest() {
 		WWW www = new WWW(url);
 		yield return www;
@@ -19,7 +18,12 @@ public class HighScore : MonoBehaviour {
 		//Debug.Log(N["competitors"][0]["rank"].AsInt);
 		Debug.Log (N ["competitors"].Count);
 		for(int x=0; x< N["competitors"].Count; x++) {
+			//formate list of names with numbers and names
 			listOfNames.text = listOfNames.text + "\n" + N["competitors"][x]["rank"].AsInt.ToString();
+			listOfNames.text = listOfNames.text + "  " + N["competitors"][x]["player_name"].Value;
+
+			//dump list of scores
+			listOfScores.text = listOfScores.text + "\n" + N["competitors"][x]["score"].AsInt;
 			//Debug.Log (N["competitors"][x]["score"].AsInt);
 			//Debug.Log (N["competitors"][x]["player_name"].Value);
 		}
@@ -27,7 +31,7 @@ public class HighScore : MonoBehaviour {
 
 	void Start(){
 		listOfNames = GameObject.Find ("NamesList").GetComponent<UILabel>();
-		listOfNames = GameObject.Find ("ScoresList").GetComponent<UILabel>();
+		listOfScores = GameObject.Find ("ScoresList").GetComponent<UILabel>();
 		StartCoroutine (SendRequest ());
 
 	}
