@@ -1,31 +1,36 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HelpText : MonoBehaviour {
-	MainMenu _Menu;
-	// Use this for initialization
-	void Start () {
-		_Menu = GameObject.Find("Main Camera").GetComponent<MainMenu>();
-	}
+public class HelpText : MonoBehaviour
+{
+	Canvas canvas;
+	MainMenu menu;
 	
-	// Update is called once per frame
-	void Update () {
-		
+	/// <summary>
+	/// 	Use this for initialization
+	/// </summary>
+	void Start ()
+	{
+		canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+		canvas.enabled = false;
+		menu = GameObject.Find("Main Camera").GetComponent<MainMenu>();		
 	}
 	
 	/// <summary>
-	/// Raises the mouse Down event.
+	/// 	Raised when the mouse is clicked.
 	/// </summary>
-	void OnMouseDown(){
+	void OnMouseDown()
+	{
 		GetComponent<Renderer>().material.color = Color.blue;
 	}
 	
 	/// <summary>
-	/// Raises the mouse up event.
+	/// 	Raised when the mouse is released.
 	/// </summary>
-	void OnMouseUp(){
+	void OnMouseUp()
+	{
 		GetComponent<Renderer>().material.color = Color.white;
-		_Menu.GoToTutorialOne();
-		Debug.Log ("Help1");
+		this.canvas.enabled = true;
+		this.menu.GoToTutorialOne();
 	}
 }
