@@ -3,17 +3,15 @@ using System.Collections;
 
 public class HelpText : MonoBehaviour
 {
-	Canvas canvas;
-	MainMenu menu;
+	TutorialManager tutorialManager;
 	
 	/// <summary>
 	/// 	Use this for initialization
 	/// </summary>
 	void Start ()
 	{
-		canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-		canvas.enabled = false;
-		menu = GameObject.Find("Main Camera").GetComponent<MainMenu>();		
+		var tutorialCanvas = GameObject.Find("Tutorial Canvas");
+		this.tutorialManager = tutorialCanvas.GetComponent<TutorialManager>();
 	}
 	
 	/// <summary>
@@ -21,7 +19,7 @@ public class HelpText : MonoBehaviour
 	/// </summary>
 	void OnMouseDown()
 	{
-		GetComponent<Renderer>().material.color = Color.blue;
+		this.GetComponent<Renderer>().material.color = Color.blue;
 	}
 	
 	/// <summary>
@@ -29,8 +27,7 @@ public class HelpText : MonoBehaviour
 	/// </summary>
 	void OnMouseUp()
 	{
-		GetComponent<Renderer>().material.color = Color.white;
-		this.canvas.enabled = true;
-		this.menu.GoToTutorialOne();
+		this.GetComponent<Renderer>().material.color = Color.white;
+		this.tutorialManager.Continue();
 	}
 }

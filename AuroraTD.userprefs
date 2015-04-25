@@ -1,13 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HighScore.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menus\TutorialManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\HighScore.cs" Line="28" Column="17" />
-      <File FileName="Assets\Scripts\GUI\GoToMainMenu.cs" Line="18" Column="2" />
-      <File FileName="Assets\Scripts\GUI\EndGameMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\NGUI\Scripts\Interaction\UIButtonColor.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GUI\QuitGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GUI\GoToHighScores.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Menus\Main Menu\HelpText.cs" Line="4" Column="38" />
+      <File FileName="Assets\Scripts\Menus\MainMenu.cs" Line="18" Column="3" />
+      <File FileName="Assets\Scripts\Menus\TutorialManager.cs" Line="13" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

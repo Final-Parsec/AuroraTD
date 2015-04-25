@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MainMenu : MonoBehaviour {
+public class MainMenu : MonoBehaviour
+{
 	MenuCameraLogic _camera;
 	public GUITexture loadScreen;
 	public GUITexture loadIcon;
@@ -66,22 +67,7 @@ public class MainMenu : MonoBehaviour {
         loadIcon.color = new Color(0.2265625f, 0.390625f, 0f, 1f);
 	}
 
-	public void GoToTutorialOne(){
-		//fade?
-		_camera.transform.position = new Vector3(-8.73f, 1.18f, 201.09f);
-	}
-
-	public void GoToTutorialTwo(){
-		_camera.transform.position = new Vector3 (22.1f, 1.18f, 201.09f);
-	}
-
-	public void GoToTutorialThree(){
-		_camera.transform.position = new Vector3 (46.84f, 1.18f, 201.09f);
-	}
-
-	public void GoToTutorialFour(){
-		_camera.transform.position = new Vector3 (77.51f, 1.18f, 201.09f);
-	}
+	
 
 	public void Quit(){
 		Application.Quit ();
