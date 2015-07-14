@@ -1,25 +1,16 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class HelpText : MonoBehaviour
 {
-	TutorialManager tutorialManager;
-	
-	/// <summary>
-	/// 	Use this for initialization
-	/// </summary>
-	void Start ()
-	{
-		var tutorialCanvas = GameObject.Find("Tutorial Canvas");
-		this.tutorialManager = tutorialCanvas.GetComponent<TutorialManager>();
-	}
-	
 	/// <summary>
 	/// 	Raised when the mouse is clicked.
 	/// </summary>
 	void OnMouseDown()
 	{
-		this.GetComponent<Renderer>().material.color = Color.blue;
+	    if (!TutorialManager.Instance.IsActive)
+	    {
+            this.GetComponent<Renderer>().material.color = Color.blue;
+	    }
 	}
 	
 	/// <summary>
@@ -27,7 +18,12 @@ public class HelpText : MonoBehaviour
 	/// </summary>
 	void OnMouseUp()
 	{
+	    if (TutorialManager.Instance.IsActive)
+	    {
+	        return;
+	    }
+
 		this.GetComponent<Renderer>().material.color = Color.white;
-		this.tutorialManager.Continue();
+		TutorialManager.Instance.Continue();
 	}
 }

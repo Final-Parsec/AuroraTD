@@ -1,16 +1,16 @@
 using UnityEngine;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 
 public class ObjectManager
 {
-
-
-	public static ObjectManager _ObjectManager{get;set;}
-
+    private static ObjectManager instance;
 
 	public List<EnemyBase> enemies = new List<EnemyBase> ();
 	public List<Turret> turrets = new List<Turret> ();
-	public GameState gameState;
+	
+    [NotNull]
+    public GameState gameState;
 
 	private Map map;
 	public Map Map
@@ -74,23 +74,21 @@ public class ObjectManager
 
 	public ObjectManager ()
 	{
-		_ObjectManager = this;
+		ObjectManager.instance = this;
 		gameState = new GameState(1, 999, MapType.Obstacles1);
 	}
 	
 	/// <summary>
-	/// Gets the instance.
+	///     Gets the singleton instance of <see cref="ObjectManager"/>.
 	/// </summary>
-	/// <returns>The instance.</returns>
-	public static ObjectManager GetInstance ()
+	/// <returns>The singleton instance.</returns>
+	[NotNull]
+    public static ObjectManager GetInstance ()
 	{
-		if (_ObjectManager == null)
-			return new ObjectManager ();
-		else
-			return _ObjectManager;
+	    return ObjectManager.instance ?? new ObjectManager();
 	}
 
-	/// <summary>
+    /// <summary>
 	/// Adds the enemy.
 	/// </summary>
 	/// <param name="enemy">Enemy.</param>
@@ -119,6 +117,6 @@ public class ObjectManager
 
 	public void DestroySinglton ()
 	{
-		_ObjectManager = null;
+		ObjectManager.instance = null;
 	}
 }

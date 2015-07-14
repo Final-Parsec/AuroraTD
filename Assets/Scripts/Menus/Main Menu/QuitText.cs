@@ -1,31 +1,36 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class QuitText : MonoBehaviour {
-	MainMenu _Menu;
-	// Use this for initialization
-	void Start () {
-		_Menu = GameObject.Find("Main Camera").GetComponent<MainMenu>();
+public class QuitText : MonoBehaviour
+{
+	private MainMenu menu;
+
+	void Start ()
+    {
+		this.menu = GameObject.Find("Main Camera").GetComponent<MainMenu>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
 	/// <summary>
-	/// Raises the mouse Down event.
+	///     Raises the mouse Down event.
 	/// </summary>
 	void OnMouseDown(){
-		GetComponent<Renderer>().material.color = Color.red;
+	    if (!TutorialManager.Instance.IsActive)
+	    {
+            this.GetComponent<Renderer>().material.color = Color.red;
+	    }
 	}
 	
 	/// <summary>
-	/// Raises the mouse up event.
+	///     Raises the mouse up event.
 	/// </summary>
-	void OnMouseUp(){
-		GetComponent<Renderer>().material.color = Color.white;
-		_Menu.Quit();
-		Debug.Log ("quit");
+	void OnMouseUp()
+    {
+	    if (TutorialManager.Instance.IsActive)
+	    {
+	        return;
+	    }
+
+		this.GetComponent<Renderer>().material.color = Color.white;
+		this.menu.Quit();
+		Debug.Log ("Quitting game.");
 	}
 }

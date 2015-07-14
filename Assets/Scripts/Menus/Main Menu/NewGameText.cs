@@ -1,31 +1,37 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class NewGameText : MonoBehaviour {
-	MainMenu _Menu;
-	// Use this for initialization
-	void Start () {
-		_Menu = GameObject.Find("Main Camera").GetComponent<MainMenu>();
+public class NewGameText : MonoBehaviour
+{
+	MainMenu menu;
+
+	void Start ()
+    {
+		this.menu = GameObject.Find("Main Camera").GetComponent<MainMenu>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
+	/// <summary>
+	///     Raises the mouse Down event.
+	/// </summary>
+	void OnMouseDown()
+    {
+	    if (!TutorialManager.Instance.IsActive)
+	    {
+            this.GetComponent<Renderer>().material.color = Color.red;
+	    }
 	}
 
 	/// <summary>
-	/// Raises the mouse Down event.
+	///     Raises the mouse up event.
 	/// </summary>
-	void OnMouseDown(){
-		GetComponent<Renderer>().material.color = Color.red;
-	}
+	void OnMouseUp()
+    {
+	    if (TutorialManager.Instance.IsActive)
+	    {
+	        return;
+	    }
 
-	/// <summary>
-	/// Raises the mouse up event.
-	/// </summary>
-	void OnMouseUp(){
-		GetComponent<Renderer>().material.color = Color.white;
-		_Menu.GoToMapSelection();
-	}
+	    this.GetComponent<Renderer>().material.color = Color.white;
+	    this.menu.GoToMapSelection();
+    }
 
 }

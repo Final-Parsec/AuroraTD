@@ -1,13 +1,17 @@
-using System;
 using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
+    public static TutorialManager Instance
+    {
+        get; 
+        private set;
+    }
+
 	public GameObject[] tutorialSections;
 
 	private Canvas canvas;
-	private int currentTutorialSection = 0;
-	private MainMenu menu;
+	private int currentTutorialSection;
 	
 	/// <summary>
 	/// 	Use this for initialization
@@ -17,8 +21,8 @@ public class TutorialManager : MonoBehaviour
 		var tutorialCanvas = GameObject.Find("Tutorial Canvas");
 		this.canvas = tutorialCanvas.GetComponent<Canvas>();
 		this.canvas.enabled = false;
-		
-		this.menu = GameObject.Find("Main Camera").GetComponent<MainMenu>();		
+
+	    TutorialManager.Instance = this;
 	}
 	
 
@@ -52,4 +56,9 @@ public class TutorialManager : MonoBehaviour
 	{
 		this.canvas.enabled = false;
 	}
+
+    public bool IsActive
+    {
+        get { return this.canvas.enabled; }
+    }
 }
