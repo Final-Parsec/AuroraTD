@@ -27,6 +27,7 @@ public class Hard : MonoBehaviour {
 		GetComponent<Renderer>().material.color = Color.white;
 		_Menu.gameState.PlayerHealth = 20;
 		_Menu.gameState.playerMoney = 100;
+        _Menu.gameState.friendlyDifficulty = "Hard";
         _Menu.gameState.dificultyFactor = .4f;
         _Menu.GoToWaveSelection();
 	}

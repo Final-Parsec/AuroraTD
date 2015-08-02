@@ -75,7 +75,7 @@ public class ObjectManager
 	public ObjectManager ()
 	{
 		ObjectManager.instance = this;
-		gameState = new GameState(1, 999, MapType.Obstacles1);
+		gameState = new GameState(1, 999, MapType.Obstacles);
 	}
 	
 	/// <summary>

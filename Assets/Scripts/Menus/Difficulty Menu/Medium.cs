@@ -32,6 +32,7 @@ public class Medium : MonoBehaviour
         GetComponent<Renderer>().material.color = Color.white;
         _Menu.gameState.PlayerHealth = 50;
         _Menu.gameState.playerMoney = 100;
+        _Menu.gameState.friendlyDifficulty = "Medium";
         _Menu.gameState.dificultyFactor = .3f;
         _Menu.GoToWaveSelection();
     }

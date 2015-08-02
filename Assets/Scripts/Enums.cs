@@ -78,8 +78,8 @@ public enum GameSpeed
 
 public enum MapType
 {
-	Empty,
-	Obstacles1
+	Open,
+	Obstacles
 };
 
 public enum State

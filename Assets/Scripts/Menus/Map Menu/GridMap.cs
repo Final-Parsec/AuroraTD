@@ -26,7 +26,7 @@ public class GridMap : MonoBehaviour {
 	void OnMouseUp()
 	{
 		GetComponent<Renderer>().material.color = Color.white;
-		_Menu.gameState.MapType = MapType.Obstacles1;
+		_Menu.gameState.MapType = MapType.Obstacles;
 		_Menu.GoToDifficultySelection();
 	}
 	

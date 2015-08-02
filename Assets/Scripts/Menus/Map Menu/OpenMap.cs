@@ -26,7 +26,7 @@ public class OpenMap : MonoBehaviour {
 	void OnMouseUp()
 	{
 		GetComponent<Renderer>().material.color = Color.white;
-		_Menu.gameState.MapType = MapType.Empty;
+		_Menu.gameState.MapType = MapType.Open;
 		_Menu.GoToDifficultySelection();
 	}
 	

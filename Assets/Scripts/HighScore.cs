@@ -13,7 +13,7 @@ public class HighScore : MonoBehaviour
     private UILabel scoreList;
     
     // Use this for initialization
-    private const string Url = "http://finalparsec.com/scores/test";
+    private const string Url = "http://finalparsec.com/scores/";
 
     /// <summary>
     ///     
@@ -24,7 +24,16 @@ public class HighScore : MonoBehaviour
         var playerName = GameObject.Find("PlayerNameTextField").GetComponent<Text>().text;
         var score = ObjectManager.GetInstance().gameState.score;
 
-        var modifiedUrl = HighScore.Url + string.Format("?limit={0}&player_name={1}&score={2}", 10, playerName.Replace(" ", "%20"), score);
+        var leaderboardName = string.Format(
+            "Aurora TD {0} {1} {2}",
+            ObjectManager.GetInstance().gameState.MapType,
+            ObjectManager.GetInstance().gameState.friendlyDifficulty,
+            ObjectManager.GetInstance().gameState.numberOfWaves == 300
+                ? "Endless"
+                : ObjectManager.GetInstance().gameState.numberOfWaves.ToString());
+
+        var modifiedUrl = HighScore.Url + string.Format("{0}?limit={1}&player_name={2}&score={3}", leaderboardName, 10, playerName, score);
+        modifiedUrl = modifiedUrl.Replace(" ", "%20");
         Debug.Log(modifiedUrl);
 
         var www = new WWW(modifiedUrl);

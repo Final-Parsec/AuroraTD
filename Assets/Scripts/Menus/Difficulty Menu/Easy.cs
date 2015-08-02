@@ -27,6 +27,7 @@ public class Easy : MonoBehaviour {
 		GetComponent<Renderer>().material.color = Color.white;
 		_Menu.gameState.PlayerHealth = 100;
 		_Menu.gameState.playerMoney = 200;
+        _Menu.gameState.friendlyDifficulty = "Easy";
         _Menu.gameState.dificultyFactor = .2f;
         _Menu.GoToWaveSelection();
 	}

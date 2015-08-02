@@ -6,6 +6,7 @@ public class GameState
 	public int nextWaveCountDown;
     public int numberOfWaves = 80;
 	public float dificultyFactor = .20f;
+    public string friendlyDifficulty = "DEV";
 	public float enemyValueFactor = .20f;
 	public bool gameStarted = false;
 	public bool gameOver = false;
@@ -34,7 +35,7 @@ public class GameState
         }
     }
 	public int playerMoney;
-	public MapType MapType = MapType.Obstacles1;
+	public MapType MapType = MapType.Obstacles;
 
 
 	public GameState (int playerHealth, int playerMoney, MapType MapType)

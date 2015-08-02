@@ -116,7 +116,7 @@ public class Map : MonoBehaviour
 	{
 		System.Random random = new System.Random();  // Needs to be instantiated outside the loop. http://stackoverflow.com/questions/5398336/random-number-generator-always-picks-the-same-value-when-run-inside-a-loop
 	
-		if(_ObjectManager.gameState.MapType == MapType.Obstacles1){
+		if(_ObjectManager.gameState.MapType == MapType.Obstacles){
 			for(int x=0; x<size_x; x++){
 				for(int z=0; z<size_z; z++){
 					if((x%5==3 || x%5==4) && (z%5==3 || z%5==4)){
