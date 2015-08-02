@@ -13,9 +13,10 @@ public class GoToHighScores : MonoBehaviour {
 
 	void OnClick ()
 	{
-		oldMenuPosition = GameObject.Find ("EndGameMenu").GetComponent<EndGameMenu>().GoAway ();
-		GameObject HighScoresFrame = GameObject.Find ("HighScoresMenu");
-		HighScoresFrame.transform.position = new Vector3(HighScoresFrame.transform.position.x, 9, HighScoresFrame.transform.position.z);
-		transform.position = oldMenuPosition;
+	    this.oldMenuPosition = GameObject.Find ("EndGameMenu").GetComponent<EndGameMenu>().GoAway();
+        HighScore.Instance.MoveToSubmitScoreState();
+        //GameObject HighScoresFrame = GameObject.Find ("HighScoresMenu");
+        //HighScoresFrame.transform.position = new Vector3(HighScoresFrame.transform.position.x, 9, HighScoresFrame.transform.position.z);
+	    this.transform.position = this.oldMenuPosition;
 	}
 }
