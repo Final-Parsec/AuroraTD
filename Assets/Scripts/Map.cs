@@ -24,7 +24,7 @@ public class Map : MonoBehaviour
 	public int size_z;
 	public Vector2 nodeSize;
 	public Node[,] nodes;
-	public Texture gridTexture;
+	public List<Texture> gridTextures;
 	private ObjectManager _ObjectManager;
 
 	// Wave control attributes
@@ -33,6 +33,35 @@ public class Map : MonoBehaviour
 	public float waveSpawnDelay = 25;
 	private float nextWaveSpawnEvent;
 	public bool playerTriggeredWave;
+
+	private float gridSize = -1;
+	private float GridSize
+	{
+		get
+		{
+			if(gridSize <= 0)
+			{
+				Node testNode = nodes[0,0];
+				
+				Vector3 screenCenter = new Vector3(Screen.width/2f, Screen.height/2f, 0f);
+				Vector3 worldCenter = Camera.main.ScreenToWorldPoint(screenCenter);
+				worldCenter.y = testNode.unityPosition.y;
+				Vector3 worldOffCenter1 = new Vector3(worldCenter.x - nodeSize.x, worldCenter.y, worldCenter.z);
+				Vector3 worldOffCenter2 = new Vector3(worldCenter.x, worldCenter.y, worldCenter.z - nodeSize.y);
+				
+				Vector3 screenOffCenter1 = Camera.main.WorldToScreenPoint(worldOffCenter1);
+				Vector3 screenOffCenter2 = Camera.main.WorldToScreenPoint(worldOffCenter2);
+				
+				gridSize = (Math.Abs(screenOffCenter1.x - screenCenter.x) + Math.Abs(screenOffCenter2.x - screenCenter.x));
+
+				Debug.Log(screenOffCenter1);
+				Debug.Log(screenOffCenter2);
+				Debug.Log(gridSize);
+			}
+
+			return gridSize;		
+		}
+	}
 
 	void Awake()
 	{
@@ -64,10 +93,17 @@ public class Map : MonoBehaviour
 	void OnGUI ()
 	{
 		if(_ObjectManager.gameState.displayGrid){
+			int index = 0;
 			foreach (Node node in nodes) {
 				if (node.isBuildable) {
 					Vector3 posVector = Camera.main.WorldToScreenPoint (node.unityPosition);
-					GUI.DrawTexture (new Rect (posVector.x, Screen.height - posVector.y, nodeSize.x, nodeSize.y), gridTexture);
+					GUI.DrawTexture (new Rect(posVector.x - GridSize / 2f,
+					                          Screen.height - posVector.y - GridSize / 2f,
+					                          GridSize-2, GridSize-2), gridTextures[index]);
+				}
+				if(++index >= gridTextures.Count)
+				{
+					index=0;
 				}
 			}
 		}
