@@ -4,6 +4,7 @@ using System.Collections;
 public class DisplayGrid : MonoBehaviour {
 
 	private ObjectManager _ObjectManager;
+	bool gridToggle = true;
 
 	void Start()
 	{
@@ -12,6 +13,7 @@ public class DisplayGrid : MonoBehaviour {
 	
 	void OnClick ()
 	{
-		_ObjectManager.gameState.displayGrid = !_ObjectManager.gameState.displayGrid;
+		gridToggle = !gridToggle;
+		_ObjectManager.Map.SetGrid(gridToggle);
 	}
 }

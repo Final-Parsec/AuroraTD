@@ -33,7 +33,7 @@ public class EndGameMenu : MonoBehaviour {
 
 	private void MoveEndGameMenu(string conditionText)
 	{
-        objectManager.gameState.displayGrid = false;
+        objectManager.Map.SetGrid(false);
 
 		Vector3 center = Camera.main.ScreenToWorldPoint (new Vector3(Screen.width/2, Screen.height/2, 0));
 		center.y = transform.position.y;

@@ -15,8 +15,6 @@ public class GameState
 	// Options
 	public bool isMuted = false;
 	public bool optionsOn = false;
-	public bool displayGrid = true;
-
 	private int playerHealth;
     public int PlayerHealth
     {

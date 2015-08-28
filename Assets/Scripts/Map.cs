@@ -25,6 +25,7 @@ public class Map : MonoBehaviour
 	public Vector2 nodeSize;
 	public Node[,] nodes;
 	public List<Texture> gridTextures;
+	private Texture2D gridTexture;
 	private ObjectManager _ObjectManager;
 
 	// Wave control attributes
@@ -34,34 +35,6 @@ public class Map : MonoBehaviour
 	private float nextWaveSpawnEvent;
 	public bool playerTriggeredWave;
 
-	private float gridSize = -1;
-	private float GridSize
-	{
-		get
-		{
-			if(gridSize <= 0)
-			{
-				Node testNode = nodes[0,0];
-				
-				Vector3 screenCenter = new Vector3(Screen.width/2f, Screen.height/2f, 0f);
-				Vector3 worldCenter = Camera.main.ScreenToWorldPoint(screenCenter);
-				worldCenter.y = testNode.unityPosition.y;
-				Vector3 worldOffCenter1 = new Vector3(worldCenter.x - nodeSize.x, worldCenter.y, worldCenter.z);
-				Vector3 worldOffCenter2 = new Vector3(worldCenter.x, worldCenter.y, worldCenter.z - nodeSize.y);
-				
-				Vector3 screenOffCenter1 = Camera.main.WorldToScreenPoint(worldOffCenter1);
-				Vector3 screenOffCenter2 = Camera.main.WorldToScreenPoint(worldOffCenter2);
-				
-				gridSize = (Math.Abs(screenOffCenter1.x - screenCenter.x) + Math.Abs(screenOffCenter2.x - screenCenter.x));
-
-				Debug.Log(screenOffCenter1);
-				Debug.Log(screenOffCenter2);
-				Debug.Log(gridSize);
-			}
-
-			return gridSize;		
-		}
-	}
 
 	void Awake()
 	{
@@ -85,6 +58,8 @@ public class Map : MonoBehaviour
 		destinationNode.isBuildable = false;
 		enemySpawnNode = nodes[0, size_z - 1];
 		enemySpawnNode.isBuildable = false;
+
+		MakeGrid ();
 	}
 
 	/// <summary>
@@ -92,22 +67,6 @@ public class Map : MonoBehaviour
 	/// </summary>
 	void OnGUI ()
 	{
-		if(_ObjectManager.gameState.displayGrid){
-			int index = 0;
-			foreach (Node node in nodes) {
-				if (node.isBuildable) {
-					Vector3 posVector = Camera.main.WorldToScreenPoint (node.unityPosition);
-					GUI.DrawTexture (new Rect(posVector.x - GridSize / 2f,
-					                          Screen.height - posVector.y - GridSize / 2f,
-					                          GridSize-2, GridSize-2), gridTextures[index]);
-				}
-				if(++index >= gridTextures.Count)
-				{
-					index=0;
-				}
-			}
-		}
-
 		foreach (EnemyBase Gob in _ObjectManager.ThingsWithHealthBars()) {
 			//Health Bar
 			float healthRatio = (((float)Gob.Health) / ((float)Gob.maxHealth));
@@ -300,6 +259,7 @@ public class Map : MonoBehaviour
 		node.isWalkable = false;
 		node.isBuildable = false;
 
+		UpdateGridNode(node);
 		return true;
 	}
 
@@ -309,6 +269,8 @@ public class Map : MonoBehaviour
 
 		node.isWalkable = true;
 		node.isBuildable = true;
+
+		UpdateGridNode(node);
 	}
 	
 	public void Update ()
@@ -321,6 +283,10 @@ public class Map : MonoBehaviour
 
 	private void SetPositions ()
 	{
+		Vector3 center = Camera.main.ScreenToWorldPoint (new Vector3(Screen.width/2f, Screen.height/2f, 0));
+		center.y = transform.position.y;
+		transform.position = center;
+
 		Vector3 midLeft = new Vector3 (0, Screen.height / 2);
 		Vector3 midRight = new Vector3 (Screen.width, Screen.height / 2);
 		
@@ -346,6 +312,8 @@ public class Map : MonoBehaviour
 		
 		float mapSizeX = (right.position.x - left.position.x);
 		float mapSizwZ = (left.position.z - right.position.z);
+
+		transform.localScale = new Vector3 (mapSizeX, mapSizwZ, 1);
 		
 		nodeSize = new Vector2 (mapSizeX / size_x, mapSizwZ / size_z);
 		float xPos;
@@ -401,5 +369,42 @@ public class Map : MonoBehaviour
 					nodes [x, z].borderTiles [(int)Border.upRight] = nodes [x, z + 1];
 			}
 		}
+	}
+
+	public void UpdateGridNode(Node node)
+	{
+		float c = node.listIndex.x + node.listIndex.z;
+		if (node.isBuildable) 
+			gridTexture.SetPixel((int)node.listIndex.x, (int)node.listIndex.z, new Color(c%2, c%2, c%2, .3f));
+		else
+			gridTexture.SetPixel((int)node.listIndex.x, (int)node.listIndex.z, Color.clear);
+
+		gridTexture.Apply ();
+	}
+
+	private void MakeGrid()
+	{
+		gridTexture = new Texture2D (size_x, size_z);
+		gridTexture.wrapMode = TextureWrapMode.Clamp;
+		gridTexture.filterMode = FilterMode.Point;
+		gridTexture.alphaIsTransparency = true;
+		GetComponent<Renderer>().material.mainTexture = gridTexture;
+
+		foreach (Node node in nodes) {
+			float c = node.listIndex.x + node.listIndex.z;
+			if (node.isBuildable) 
+				gridTexture.SetPixel((int)node.listIndex.x, (int)node.listIndex.z, new Color(c%2, c%2, c%2, .3f));
+			else
+				gridTexture.SetPixel((int)node.listIndex.x, (int)node.listIndex.z, Color.clear);
+
+		}
+		gridTexture.Apply ();
+
+	}
+
+	public void SetGrid(bool flag)
+	{
+		float alpha = GetComponent<Renderer> ().material.color.a;
+		GetComponent<Renderer> ().material.color = new Color (1f, 1f, 1f, 1f * (flag?1f:0f));
 	}
 }
