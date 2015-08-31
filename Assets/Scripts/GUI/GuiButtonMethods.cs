@@ -12,6 +12,11 @@ public class GuiButtonMethods : MonoBehaviour
 	private Text sendWaveName;
 	private Text healthValue;
 	private Text moneyValue;
+
+	private GameObject OptionScreen;
+	private Animator OptionAnimator;
+
+	private bool gridToggle = true;
     
     void Start()
     {
@@ -31,11 +36,16 @@ public class GuiButtonMethods : MonoBehaviour
 		sendWaveName = GameObject.Find ("SendWaveName").GetComponent<Text>();
 		sendWaveTime = GameObject.Find ("SendWaveTime").GetComponent<Text>();
 		sendWaveName.text = "Start Game";
-		sendWaveTime.text = "+" + objectManager.gameState.nextWaveCountDown.ToString();
+		sendWaveTime.text = objectManager.gameState.nextWaveCountDown.ToString();
 
 		//Money And Health
 		healthValue = GameObject.Find ("HealthValue").GetComponent<Text>();
 		moneyValue = GameObject.Find ("MoneyValue").GetComponent<Text>();
+
+		// Option Screen
+		OptionScreen = GameObject.Find ("OptionsScreen");
+		OptionAnimator = OptionScreen.GetComponent<Animator>();
+		OptionScreen.SetActive (false);
 	
 	}
 	
@@ -83,6 +93,47 @@ public class GuiButtonMethods : MonoBehaviour
 				objectManager.gameState.score += objectManager.gameState.nextWaveCountDown;
 			}
 		}
-		
+	}
+
+	public void OptionPressed()
+	{
+
+		if ((objectManager.Map.upcomingWaves.Count == 0 &&
+		     objectManager.enemies.Count == 0 &&
+		     objectManager.gameState.PlayerHealth > 0) ||
+		     objectManager.gameState.PlayerHealth <= 0)
+		{
+			return;
+		}
+		objectManager.gameState.optionsOn = !OptionScreen.activeSelf;
+		if(!OptionScreen.activeSelf){
+			OptionScreen.SetActive (true);
+			OptionAnimator.SetTrigger("Fade In");
+		}else {
+			OptionAnimator.SetTrigger("Fade Out");
+		}
+	}
+
+	public void MutePressed()
+	{
+		var objectManager = ObjectManager.GetInstance();
+		objectManager.gameState.isMuted = !objectManager.gameState.isMuted;
+	}
+
+	public void DisplayGridPressed()
+	{
+		gridToggle = !gridToggle;
+		objectManager.Map.SetGrid(gridToggle);
+	}
+
+	public void QuitPressed()
+	{
+		Application.Quit ();
+	}
+
+	public void MainMenuPressed()
+	{
+		objectManager.DestroySinglton();
+		Application.LoadLevel("Main Menu");
 	}
 }

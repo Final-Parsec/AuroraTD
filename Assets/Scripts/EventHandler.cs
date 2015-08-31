@@ -24,6 +24,10 @@ public class EventHandler : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		//Debug.Log (objectManager.gameState.optionsOn);
+		if (objectManager.gameState.optionsOn)
+			return;
+
 		// Left Click Down & Tuoch Event
 		if (Input.GetMouseButtonDown (0)) {
 			Vector3 mousePosition = Input.mousePosition;
