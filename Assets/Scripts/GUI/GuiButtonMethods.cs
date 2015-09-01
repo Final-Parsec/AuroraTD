@@ -1,10 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.Collections;
 using System.Linq;
+using SimpleJSON;
 
 public class GuiButtonMethods : MonoBehaviour
 {
+	private const string Url = "http://finalparsec.com/scores/";
+
     private ObjectManager objectManager;
 	private CanvasGroup[] canvasGroups;
 
@@ -23,6 +27,9 @@ public class GuiButtonMethods : MonoBehaviour
 
 	private GameObject submitScoreScreen;
 	private Animator submitScoreAnimator;
+
+	private GameObject highScoreScreen;
+	private Animator highScoreAnimator;
 
 	private bool gridToggle = true;
     
@@ -66,6 +73,11 @@ public class GuiButtonMethods : MonoBehaviour
 		submitScoreScreen = GameObject.Find ("SubmitScoreScreen");
 		submitScoreAnimator = submitScoreScreen.GetComponent<Animator>();
 		submitScoreScreen.SetActive (false);
+
+		// High Score Screen
+		highScoreScreen = GameObject.Find ("HighScoreScreen");
+		highScoreAnimator = highScoreScreen.GetComponent<Animator>();
+		highScoreScreen.SetActive (false);
 
 	}
 	
@@ -188,5 +200,65 @@ public class GuiButtonMethods : MonoBehaviour
 
 		submitScoreScreen.SetActive (true);
 		submitScoreAnimator.SetTrigger("Fade In");
+	}
+
+	public void SubmitScorePressed()
+	{
+
+		if (string.IsNullOrEmpty(GameObject.Find("PlayerNameTextField").GetComponent<Text>().text))
+		{
+			return;
+		}
+
+		submitScoreAnimator.SetTrigger ("Fade Out");
+
+		highScoreScreen.SetActive (true);
+		highScoreAnimator.SetTrigger("Fade In");
+		
+		this.StartCoroutine(this.SendRequest());
+		Text yourScoreLabel = GameObject.Find("HighScoreScore").GetComponent<Text>();
+		yourScoreLabel.text = "Your Score: " + ObjectManager.GetInstance().gameState.score.ToString();
+
+	}
+
+	private IEnumerator SendRequest()
+	{
+		Text nameList = GameObject.Find ("HighScoreNames").GetComponent<Text>();
+		Text scoreList = GameObject.Find ("HighScoreScores").GetComponent<Text>();
+
+		string playerName = GameObject.Find("PlayerNameTextField").GetComponent<Text>().text;
+		int score = ObjectManager.GetInstance().gameState.score;
+		
+		string leaderboardName = string.Format(
+			"Aurora TD {0} {1} {2}",
+			ObjectManager.GetInstance().gameState.MapType,
+			ObjectManager.GetInstance().gameState.friendlyDifficulty,
+			ObjectManager.GetInstance().gameState.numberOfWaves == 300
+			? "Endless"
+			: ObjectManager.GetInstance().gameState.numberOfWaves.ToString());
+		
+		string modifiedUrl = Url + string.Format("{0}?limit={1}&player_name={2}&score={3}", leaderboardName, 10, playerName, score);
+		modifiedUrl = modifiedUrl.Replace(" ", "%20");
+		Debug.Log(modifiedUrl);
+		
+		WWW www = new WWW(modifiedUrl);
+		
+		yield return www;
+		
+		JSONNode jsonNode = JSON.Parse(www.text);
+		
+		nameList.text = string.Empty;
+		scoreList.text = string.Empty;
+		int position = 1;
+		for (int x = 0; x < jsonNode["competitors"].Count; x++)
+		{
+			//format list of names with numbers and names
+			nameList.text += position + ":\t" + jsonNode["competitors"][x]["player_name"].Value + "\n";
+			
+			//dump list of scores
+			scoreList.text += jsonNode["competitors"][x]["score"].AsInt + "\n";
+
+			position++;
+		}
 	}
 }
