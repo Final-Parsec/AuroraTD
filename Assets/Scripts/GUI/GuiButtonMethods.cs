@@ -13,8 +13,16 @@ public class GuiButtonMethods : MonoBehaviour
 	private Text healthValue;
 	private Text moneyValue;
 
-	private GameObject OptionScreen;
-	private Animator OptionAnimator;
+	private GameObject optionScreen;
+	private Animator optionAnimator;
+
+	private GameObject gameOverScreen;
+	private Animator gameOverAnimator;
+	private Text condition;
+	private Text score;
+
+	private GameObject submitScoreScreen;
+	private Animator submitScoreAnimator;
 
 	private bool gridToggle = true;
     
@@ -43,10 +51,22 @@ public class GuiButtonMethods : MonoBehaviour
 		moneyValue = GameObject.Find ("MoneyValue").GetComponent<Text>();
 
 		// Option Screen
-		OptionScreen = GameObject.Find ("OptionsScreen");
-		OptionAnimator = OptionScreen.GetComponent<Animator>();
-		OptionScreen.SetActive (false);
-	
+		optionScreen = GameObject.Find ("OptionsScreen");
+		optionAnimator = optionScreen.GetComponent<Animator>();
+		optionScreen.SetActive (false);
+
+		// Game Over Screen
+		gameOverScreen = GameObject.Find ("GameOverScreen");
+		gameOverAnimator = gameOverScreen.GetComponent<Animator>();
+		condition = GameObject.Find ("GameOverCondition").GetComponent<Text> ();
+		score = GameObject.Find ("GameOverScore").GetComponent<Text> ();
+		gameOverScreen.SetActive (false);
+
+		// Submit Score Screen
+		submitScoreScreen = GameObject.Find ("SubmitScoreScreen");
+		submitScoreAnimator = submitScoreScreen.GetComponent<Animator>();
+		submitScoreScreen.SetActive (false);
+
 	}
 	
 	void Update()
@@ -54,6 +74,31 @@ public class GuiButtonMethods : MonoBehaviour
 		sendWaveTime.text = objectManager.gameState.nextWaveCountDown.ToString();
 		moneyValue.text = objectManager.gameState.playerMoney.ToString();
 		healthValue.text = objectManager.gameState.PlayerHealth.ToString();
+
+		if(objectManager.Map.upcomingWaves.Count == 0 &&
+		   objectManager.enemies.Count == 0 &&
+		   objectManager.gameState.PlayerHealth > 0 &&
+		   !objectManager.gameState.gameOver)
+		{
+			
+			EndGame("Victory!");
+		}
+		else if(objectManager.gameState.PlayerHealth <= 0 && !objectManager.gameState.gameOver)
+		{
+			EndGame("Defeat!");
+		}
+	}
+
+	private void EndGame(string conditionText)
+	{
+		objectManager.Map.SetGrid(false);
+		
+		gameOverScreen.SetActive (true);
+		gameOverAnimator.SetTrigger("Fade In");
+		condition.text = conditionText;
+		score.text = "Score: " + objectManager.gameState.score;
+		
+		objectManager.gameState.gameOver = true;
 	}
 
     public void TurretButtonPressed(int turretType)
@@ -105,12 +150,12 @@ public class GuiButtonMethods : MonoBehaviour
 		{
 			return;
 		}
-		objectManager.gameState.optionsOn = !OptionScreen.activeSelf;
-		if(!OptionScreen.activeSelf){
-			OptionScreen.SetActive (true);
-			OptionAnimator.SetTrigger("Fade In");
+		objectManager.gameState.optionsOn = !optionScreen.activeSelf;
+		if(!optionScreen.activeSelf){
+			optionScreen.SetActive (true);
+			optionAnimator.SetTrigger("Fade In");
 		}else {
-			OptionAnimator.SetTrigger("Fade Out");
+			optionAnimator.SetTrigger("Fade Out");
 		}
 	}
 
@@ -135,5 +180,13 @@ public class GuiButtonMethods : MonoBehaviour
 	{
 		objectManager.DestroySinglton();
 		Application.LoadLevel("Main Menu");
+	}
+
+	public void HighScorePressed()
+	{
+		gameOverScreen.SetActive (false);
+
+		submitScoreScreen.SetActive (true);
+		submitScoreAnimator.SetTrigger("Fade In");
 	}
 }
