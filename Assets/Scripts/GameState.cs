@@ -4,7 +4,7 @@ public class GameState
 	public GameSpeed gameSpeed = GameSpeed.X1;
 	public int waveCount = 0;
 	public int nextWaveCountDown;
-    public int numberOfWaves = 80;
+    public int numberOfWaves = 10;
 	public float dificultyFactor = .20f;
     public string friendlyDifficulty = "DEV";
 	public float enemyValueFactor = .20f;

@@ -15,6 +15,7 @@ public class WaveWheel : MonoBehaviour {
 	private GameObject[] waveImages = new GameObject[3];
 
 	private bool updateSpriteImages;
+	// used in Map
 	public bool UpdateSpriteImages{
 		get {
 			return updateSpriteImages;
@@ -70,9 +71,6 @@ public class WaveWheel : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (_ObjectManager.gameState.gameOver)
-			return;
-
 		float distanceRatio = -1 * (_ObjectManager.gameState.nextWaveCountDown+1) /_ObjectManager.Map.waveSpawnDelay;
 
 		waveImages[0].transform.rotation = Quaternion.Euler(0,
@@ -102,7 +100,11 @@ public class WaveWheel : MonoBehaviour {
 			
 			waveImages[2].GetComponent<RawImage>().texture = nextWaveTexture;
 			waveImages[2].transform.FindChild("Number").GetComponent<Text>().text = nextWaveLevel;
-			waveImages[2].transform.FindChild("Name").GetComponent<Text>().text = GetWaveName(_ObjectManager.Map.upcomingWaves[1], waveImages[2]);
+
+			if(_ObjectManager.Map.upcomingWaves.Count < 2)
+				waveImages[2].transform.FindChild("Name").GetComponent<Text>().text = "";
+			else
+				waveImages[2].transform.FindChild("Name").GetComponent<Text>().text = GetWaveName(_ObjectManager.Map.upcomingWaves[1], waveImages[2]);
 		}
 	}
 
