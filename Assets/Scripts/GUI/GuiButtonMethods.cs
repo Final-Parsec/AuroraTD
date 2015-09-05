@@ -31,6 +31,9 @@ public class GuiButtonMethods : MonoBehaviour
 	private GameObject highScoreScreen;
 	private Animator highScoreAnimator;
 
+	private GameObject upgradeMenu;
+	private Animator upgradeAnimator;
+
 	private bool gridToggle = true;
     
     void Start()
@@ -78,6 +81,10 @@ public class GuiButtonMethods : MonoBehaviour
 		highScoreScreen = GameObject.Find ("HighScoreScreen");
 		highScoreAnimator = highScoreScreen.GetComponent<Animator>();
 		highScoreScreen.SetActive (false);
+
+		// Turret Upgrade Menu
+		upgradeMenu = GameObject.Find ("UpgradeMenu");
+		upgradeAnimator = upgradeMenu.GetComponent<Animator>();
 
 	}
 	
@@ -260,5 +267,10 @@ public class GuiButtonMethods : MonoBehaviour
 
 			position++;
 		}
+	}
+
+	public void UpgradeMenuBackPressed()
+	{
+		upgradeAnimator.SetTrigger ("Swipe Out");
 	}
 }

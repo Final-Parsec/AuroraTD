@@ -57,7 +57,7 @@ public class ObjectManager
 	{ 
 		get{
 			if(turretFocusMenu == null)
-				turretFocusMenu = GameObject.Find("TurretFocusMenu").GetComponent<TurretFocusMenu>();
+				turretFocusMenu = GameObject.Find("UpgradeMenu").GetComponent<TurretFocusMenu>();
 			return turretFocusMenu;
 		}
 	}

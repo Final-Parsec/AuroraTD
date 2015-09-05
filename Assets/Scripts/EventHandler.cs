@@ -41,33 +41,9 @@ public class EventHandler : MonoBehaviour
 				objectManager.TurretFactory.PlaceOrSelectTurret(mousePosition);
 			}
 			else {
-				string first = UICamera.lastHit.collider.gameObject.name;
 
-				RaycastHit[] hits = Physics.RaycastAll(UICamera.currentCamera.ScreenPointToRay(mousePosition));
-				bool turretFocusMenuClicked = false;
-								
-				foreach (RaycastHit hit in hits) {
-					if (turretFocusMenuObjects.Contains(hit.collider.gameObject.name)) {
-						turretFocusMenuClicked = true;
-					}
-				}
-				
-				if (turretFocusMenuClicked && first.Contains("Turret(Clone)")) {
-					string name = hits[0].collider.gameObject.name;
-
-					var handler = GameObject.Find(name).GetComponent<TurretFocusMenuButtonHandler>();
-					if (handler != null) { 
-						handler.OnClick(name);
-					}
-				}
-				
-				if (!turretFocusMenuClicked) {
+				if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {
                     objectManager.TurretFocusMenu.SelectedTurret = null;
-					objectManager.TurretFocusMenu.transform.position = new Vector3(
-						objectManager.TurretFocusMenu.transform.position.x,
-						objectManager.TurretFocusMenu.transform.position.y - 1000,
-						objectManager.TurretFocusMenu.transform.position.z
-					);                    
 				}
 			}
 		}
