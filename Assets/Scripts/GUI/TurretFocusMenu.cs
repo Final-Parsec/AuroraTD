@@ -41,6 +41,7 @@ public class TurretFocusMenu : MonoBehaviour
             if (value != null)
             {
                 value.Select();
+				upgradeAnimator.SetTrigger ("Swipe In");
                 AttachToTurret();
             }
 			else
@@ -61,94 +62,92 @@ public class TurretFocusMenu : MonoBehaviour
 		transform.position = new Vector3(transform.position.x, transform.position.y - 1000, transform.position.z);
 	}
 
-    public void UpgradeOne()
-    {
-        switch(SelectedTurret.TurretType)
-        {
-            case TurretType.EarthTurret:
-                SelectedTurret.QuakeUpgrade();
-                break;
-            case TurretType.FireTurret:
-                selectedTurret.InfernoUpgrade();
-                break;
-            case TurretType.StormTurret:
-                selectedTurret.ChainLightningUpgrade();
-                break;
-            case TurretType.VoodooTurret:
-                selectedTurret.PoisonUpgrade();
-                break;
-        }
+	public void Upgrade(int upgradeType)
+	{
+		Debug.Log ("upgrad: "+upgradeType);
 
+		switch (upgradeType) 
+		{
+		case 0:
+			switch(SelectedTurret.TurretType)
+			{
+			case TurretType.EarthTurret:
+				SelectedTurret.QuakeUpgrade();
+				break;
+			case TurretType.FireTurret:
+				selectedTurret.InfernoUpgrade();
+				break;
+			case TurretType.StormTurret:
+				selectedTurret.ChainLightningUpgrade();
+				break;
+			case TurretType.VoodooTurret:
+				selectedTurret.PoisonUpgrade();
+				break;
+			}
+			break;
+
+		case 1:
+			switch (SelectedTurret.TurretType)
+			{
+			case TurretType.EarthTurret:
+				SelectedTurret.MeteorShower();
+				break;
+			case TurretType.FireTurret:
+				selectedTurret.ArmageddonUpgrade();
+				break;
+			case TurretType.StormTurret:
+				selectedTurret.FrostUpgrade();
+				break;
+			case TurretType.VoodooTurret:
+				selectedTurret.MindControlUpgrade();
+				break;
+			}
+			break;
+
+		case 2:
+			switch (SelectedTurret.TurretType)
+			{
+			case TurretType.EarthTurret:
+				SelectedTurret.RootBindingUpgrade();
+				break;
+			case TurretType.FireTurret:
+				selectedTurret.BurnUpgrade();
+				break;
+			case TurretType.StormTurret:
+				selectedTurret.LightningStrikeUpgrade();
+				break;
+			case TurretType.VoodooTurret:
+				selectedTurret.HexUpgrade();
+				break;
+			}
+			break;
+		}
 		AttachToTurret();
-    }
 
-    public void UpgradeTwo()
-    {
-        switch (SelectedTurret.TurretType)
-        {
-            case TurretType.EarthTurret:
-                SelectedTurret.MeteorShower();
-                break;
-            case TurretType.FireTurret:
-                selectedTurret.ArmageddonUpgrade();
-                break;
-            case TurretType.StormTurret:
-                selectedTurret.FrostUpgrade();
-                break;
-            case TurretType.VoodooTurret:
-                selectedTurret.MindControlUpgrade();
-                break;
-        }
-
-		AttachToTurret();
-    }
-
-    public void UpgradeThree()
-    {
-        switch (SelectedTurret.TurretType)
-        {
-            case TurretType.EarthTurret:
-                SelectedTurret.RootBindingUpgrade();
-                break;
-            case TurretType.FireTurret:
-                selectedTurret.BurnUpgrade();
-                break;
-            case TurretType.StormTurret:
-                selectedTurret.LightningStrikeUpgrade();
-                break;
-            case TurretType.VoodooTurret:
-                selectedTurret.HexUpgrade();
-                break;
-        }
-
-		AttachToTurret();
-    }
+	}
 
     #region Internal methods
 
     private void AttachToTurret()
     {
-		upgradeAnimator.SetTrigger ("Swipe In");
-
-        // TODO: Change icons / text based on turret type and associated levels.
+		
         upgradeBackground.color = new Color(SelectedTurret.focusMenuRed, SelectedTurret.focusMenuGreen, SelectedTurret.focusMenuBlue, .8f);
 		selectedTurretBackground.color = new Color(SelectedTurret.focusMenuRed, SelectedTurret.focusMenuGreen, SelectedTurret.focusMenuBlue, .8f);
+
+		upgradeNames[0].text = "";
+		upgradeNames[1].text = "";
+		upgradeNames[2].text = "";
 		
-        //BoxCollider aButtonCollider = this.GetComponentInChildren<BoxCollider>();
-        
-        //float slideWidthCheck = aButtonCollider.bounds.size.x * 5.6f;
-
-        //if (Camera.main.WorldToScreenPoint(transform.position).x < slideWidthCheck)
-		//	transform.position = new Vector3(transform.position.x + 9, 99, SelectedTurret.transform.position.z - 9);
-        //else if (Camera.main.WorldToScreenPoint(transform.position).x > Screen.width - slideWidthCheck)
-		//	transform.position = new Vector3(transform.position.x - 9, 99, SelectedTurret.transform.position.z + 9);
-
         switch (SelectedTurret.TurretType)
         {
+					
             case TurretType.EarthTurret:
-				upgradeNames[0].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.quakeCost, selectedTurret.UpgradeOneLevel)+" ";
-				upgradeNames[1].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.meteorShowerCost, selectedTurret.UpgradeTwoLevel)+" ";
-				upgradeNames[2].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.rootBindingCost, selectedTurret.UpgradeThreeLevel)+" ";
+				if (selectedTurret.UpgradeOneLevel + selectedTurret.UpgradeTwoLevel + selectedTurret.UpgradeThreeLevel != 3)
+				{
+					upgradeNames[0].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.quakeCost, selectedTurret.UpgradeOneLevel)+" ";
+					upgradeNames[1].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.meteorShowerCost, selectedTurret.UpgradeTwoLevel)+" ";
+					upgradeNames[2].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.rootBindingCost, selectedTurret.UpgradeThreeLevel)+" ";
+				}
 
 				upgradeNames[0].text += "Quake";
 				upgradeNames[1].text += "Meteor Shower";
@@ -161,9 +160,12 @@ public class TurretFocusMenu : MonoBehaviour
 				
                 break;
             case TurretType.FireTurret:
-				upgradeNames[0].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.infernoCost, selectedTurret.UpgradeOneLevel)+" ";
-				upgradeNames[1].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.armageddonCost, selectedTurret.UpgradeTwoLevel)+" ";
-				upgradeNames[2].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.burnCost, selectedTurret.UpgradeThreeLevel)+" ";
+				if (selectedTurret.UpgradeOneLevel + selectedTurret.UpgradeTwoLevel + selectedTurret.UpgradeThreeLevel != 3)
+				{
+					upgradeNames[0].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.infernoCost, selectedTurret.UpgradeOneLevel)+" ";
+					upgradeNames[1].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.armageddonCost, selectedTurret.UpgradeTwoLevel)+" ";
+					upgradeNames[2].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.burnCost, selectedTurret.UpgradeThreeLevel)+" ";
+				}
 
 				upgradeNames[0].text += "Inferno";
 				upgradeNames[1].text += "Armageddon";
@@ -176,9 +178,12 @@ public class TurretFocusMenu : MonoBehaviour
 				
                 break;
             case TurretType.StormTurret:
-				upgradeNames[0].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.chainLightningCost, selectedTurret.UpgradeOneLevel)+" ";
-				upgradeNames[1].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.frostCost, selectedTurret.UpgradeTwoLevel)+" ";
-				upgradeNames[2].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.lightningStrikeCost, selectedTurret.UpgradeThreeLevel)+" ";
+				if (selectedTurret.UpgradeOneLevel + selectedTurret.UpgradeTwoLevel + selectedTurret.UpgradeThreeLevel != 3)
+				{
+					upgradeNames[0].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.chainLightningCost, selectedTurret.UpgradeOneLevel)+" ";
+					upgradeNames[1].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.frostCost, selectedTurret.UpgradeTwoLevel)+" ";
+					upgradeNames[2].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.lightningStrikeCost, selectedTurret.UpgradeThreeLevel)+" ";
+				}
 
 				upgradeNames[0].text += "Chain Lightning";
 				upgradeNames[1].text += "Frost";
@@ -190,9 +195,12 @@ public class TurretFocusMenu : MonoBehaviour
 
                 break;
             case TurretType.VoodooTurret:
-				upgradeNames[0].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.poisonCost, selectedTurret.UpgradeOneLevel)+" ";
-				upgradeNames[1].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.mindControlCost, selectedTurret.UpgradeTwoLevel)+" ";
-				upgradeNames[2].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.hexCost, selectedTurret.UpgradeThreeLevel)+" ";
+				if (selectedTurret.UpgradeOneLevel + selectedTurret.UpgradeTwoLevel + selectedTurret.UpgradeThreeLevel != 3)
+				{
+					upgradeNames[0].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.poisonCost, selectedTurret.UpgradeOneLevel)+" ";
+					upgradeNames[1].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.mindControlCost, selectedTurret.UpgradeTwoLevel)+" ";
+					upgradeNames[2].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.hexCost, selectedTurret.UpgradeThreeLevel)+" ";
+				}
 
 				upgradeNames[0].text += "Poison";
 				upgradeNames[1].text += "Mind Control";
@@ -205,12 +213,6 @@ public class TurretFocusMenu : MonoBehaviour
                 break;
         }
 
-		if (selectedTurret.UpgradeOneLevel + selectedTurret.UpgradeTwoLevel + selectedTurret.UpgradeThreeLevel == 3)
-		{
-			upgradeNames[0].text = "";
-			upgradeNames[1].text = "";
-			upgradeNames[2].text = "";
-		}
 		
         CorrectUpgradeNumbers();
     }
@@ -244,10 +246,19 @@ public class TurretFocusMenu : MonoBehaviour
 		upgradeBackground = GameObject.FindGameObjectWithTag(Tags.upgradePanel).GetComponent<Image>();
 		selectedTurretBackground = GameObject.FindGameObjectWithTag(Tags.selectedTurretPanel).GetComponent<Image> ();
 
+		int upgradeType = 0;
 		foreach (GameObject obj in GameObject.FindGameObjectsWithTag(Tags.upgradeButton))
 		{
+			int upTypeReal = upgradeType;
+
 			upgradeIcons.Add (obj.transform.Find("UpgradeImage").GetComponent<RawImage> ());
 			upgradeNames.Add(obj.transform.Find("UpgradeName").GetComponent<Text>());
+
+			UnityEngine.Events.UnityAction action1 = () => { Upgrade(upTypeReal); };
+			obj.GetComponent<Button>().onClick.AddListener(action1);
+			upgradeType++;
+
+
 		}
 
 		LoadIcons ();

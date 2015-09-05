@@ -271,6 +271,6 @@ public class GuiButtonMethods : MonoBehaviour
 
 	public void UpgradeMenuBackPressed()
 	{
-		upgradeAnimator.SetTrigger ("Swipe Out");
+		objectManager.TurretFocusMenu.SelectedTurret = null;
 	}
 }
