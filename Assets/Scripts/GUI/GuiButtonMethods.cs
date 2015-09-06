@@ -273,4 +273,43 @@ public class GuiButtonMethods : MonoBehaviour
 	{
 		objectManager.TurretFocusMenu.SelectedTurret = null;
 	}
+
+	public void SpeedUp()
+	{
+		switch(objectManager.gameState.gameSpeed)
+		{
+		case GameSpeed.Paused:
+			objectManager.gameState.gameSpeed = GameSpeed.X1;
+			break;
+
+		case GameSpeed.X1:
+			objectManager.gameState.gameSpeed = GameSpeed.X2;
+			break;
+
+		case GameSpeed.X2:
+			objectManager.gameState.gameSpeed = GameSpeed.X3;
+			break;
+		}
+		Debug.Log (objectManager.gameState.gameSpeed);
+	}
+
+	public void SlowDown()
+	{
+		switch(objectManager.gameState.gameSpeed)
+		{
+		case GameSpeed.X1:
+			objectManager.gameState.gameSpeed = GameSpeed.Paused;
+			break;
+			
+		case GameSpeed.X2:
+			objectManager.gameState.gameSpeed = GameSpeed.X1;
+			break;
+
+		case GameSpeed.X3:
+			objectManager.gameState.gameSpeed = GameSpeed.X2;
+			break;
+		}
+
+		Debug.Log (objectManager.gameState.gameSpeed);
+	}
 }
