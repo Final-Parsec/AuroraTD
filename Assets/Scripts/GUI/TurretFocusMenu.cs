@@ -12,6 +12,7 @@ public class TurretFocusMenu : MonoBehaviour
 	
 	private Image upgradeBackground;
 	private Image selectedTurretBackground;
+	private Image selectedTurretImage;
 	private List<RawImage> upgradeIcons = new List<RawImage>();
 	private List<Text> upgradeNames = new List<Text>();
 	private List<Button> upgradeButtons = new List<Button>();
@@ -129,6 +130,9 @@ public class TurretFocusMenu : MonoBehaviour
 
     private void AttachToTurret()
     {
+		selectedTurretImage.sprite = selectedTurret.selectedSprite;
+		selectedTurretImage.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2( 30f, 30f + 15*selectedTurret.Level);
+
 		sellPrice.text = "+(" + selectedTurret.Msrp + ")";
 
 		bool isMaxLevel = selectedTurret.UpgradeOneLevel + selectedTurret.UpgradeTwoLevel + selectedTurret.UpgradeThreeLevel == 3;
@@ -249,6 +253,7 @@ public class TurretFocusMenu : MonoBehaviour
 	void Start () {
 		upgradeBackground = GameObject.FindGameObjectWithTag(Tags.upgradePanel).GetComponent<Image>();
 		selectedTurretBackground = GameObject.FindGameObjectWithTag(Tags.selectedTurretPanel).GetComponent<Image> ();
+		selectedTurretImage = GameObject.FindGameObjectWithTag(Tags.selectedTurretPanel).transform.FindChild("SelectedImage").GetComponent<Image> ();
 
 		int upgradeType = 0;
 		foreach (GameObject obj in GameObject.FindGameObjectsWithTag(Tags.upgradeButton))
