@@ -36,7 +36,10 @@ public class TurretFocusMenu : MonoBehaviour
             Turret oldSelectedTurret = selectedTurret;
 
 			if(selectedTurret != null && value == null)
+			{
 				upgradeAnimator.SetTrigger("Swipe Out");
+				objectManager.gameState.gameSpeed = GameSpeed.X1;
+			}
 
             selectedTurret = value;
 
@@ -50,6 +53,8 @@ public class TurretFocusMenu : MonoBehaviour
                 value.Select();
 				upgradeAnimator.SetTrigger ("Swipe In");
                 AttachToTurret();
+
+				objectManager.gameState.gameSpeed = GameSpeed.Paused;
             }
         }
     }

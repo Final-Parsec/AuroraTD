@@ -223,25 +223,29 @@ public class Turret : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		lock(syncRoot)
+		if(objectManager.gameState.gameSpeed == GameSpeed.Paused)
 		{
-            if (myTargets.Any())
-            {
-                EnemyBase myTarget = myTargets.ElementAt(Random.Range(0, myTargets.Count));
-                
-                
-                if (myTarget != null) {
-                    if (Time.time >= nextDamageEvent)
-                    {
-                        Fire(myTarget);
-                    }
-                }
-                else
+			nextDamageEvent += Time.deltaTime;
+			return;
+		}
+
+        if (myTargets.Any())
+        {
+            EnemyBase myTarget = myTargets.ElementAt(Random.Range(0, myTargets.Count));
+            
+            
+            if (myTarget != null) {
+                if (Time.time >= nextDamageEvent)
                 {
-                    nextDamageEvent = Time.time + AttackDelay;
-                    myTargets.Remove(myTarget);
-                }              
+                    Fire(myTarget);
+                }
             }
-		}		
+            else
+            {
+				nextDamageEvent = Time.time + (AttackDelay * 1f/(float)objectManager.gameState.gameSpeed);
+                myTargets.Remove(myTarget);
+            }              
+        }
+			
 	}
 }

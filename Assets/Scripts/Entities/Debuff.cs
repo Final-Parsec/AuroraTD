@@ -15,10 +15,10 @@ public class Debuff
 	float originalSpeed;
 
 	// Time stuff
-	float duration;
+	public float duration;
 	float interval;
 	float startTime;
-	float nextEvent = 0;
+	public float nextEvent = 0;
 
 	public Debuff (EnemyBase owner, int magnitude, float duration, float interval, float startTime, EnemyState enemyState)
 	{

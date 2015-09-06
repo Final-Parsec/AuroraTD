@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 	// Configurable
 	public float range;
 	public float speed;
+	public float Speed { get{return speed * (float)objectManager.gameState.gameSpeed;} set{speed = value;} }
 	public EnemyBase target;
 	public Vector3 targetPosition;
 
@@ -41,11 +42,11 @@ public class Projectile : MonoBehaviour
 		                                 transform.position.z - targetPosition.z).normalized;
 		
 		// update the position
-		transform.position = new Vector3 (transform.position.x - moveVector.x * speed * Time.deltaTime,
-		                                 transform.position.y - moveVector.y * speed * Time.deltaTime,
-		                                 transform.position.z - moveVector.z * speed * Time.deltaTime);
+		transform.position = new Vector3 (transform.position.x - moveVector.x * Speed * Time.deltaTime,
+		                                 transform.position.y - moveVector.y * Speed * Time.deltaTime,
+		                                 transform.position.z - moveVector.z * Speed * Time.deltaTime);
 		                                 
-		distance += Time.deltaTime * speed;
+		distance += Time.deltaTime * Speed;
 		
 		if (distance > range ||
 			Vector3.Distance (transform.position, new Vector3 (targetPosition.x, targetPosition.y, targetPosition.z)) < 1) 
