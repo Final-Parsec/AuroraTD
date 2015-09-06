@@ -14,6 +14,8 @@ public class TurretFocusMenu : MonoBehaviour
 	private Image selectedTurretBackground;
 	private List<RawImage> upgradeIcons = new List<RawImage>();
 	private List<Text> upgradeNames = new List<Text>();
+	private List<Button> upgradeButtons = new List<Button>();
+	private Text sellPrice;
 	public Dictionary<string,Texture> IconLookup = new Dictionary<string,Texture>();
 
 	private ObjectManager objectManager;
@@ -59,13 +61,10 @@ public class TurretFocusMenu : MonoBehaviour
         objectManager.Map.UnBlockNode(SelectedTurret.transform.position);
         Destroy(SelectedTurret.gameObject);
         SelectedTurret = null;
-		transform.position = new Vector3(transform.position.x, transform.position.y - 1000, transform.position.z);
 	}
 
 	public void Upgrade(int upgradeType)
 	{
-		Debug.Log ("upgrad: "+upgradeType);
-
 		switch (upgradeType) 
 		{
 		case 0:
@@ -130,6 +129,11 @@ public class TurretFocusMenu : MonoBehaviour
 
     private void AttachToTurret()
     {
+		sellPrice.text = "+(" + selectedTurret.Msrp + ")";
+
+		bool isMaxLevel = selectedTurret.UpgradeOneLevel + selectedTurret.UpgradeTwoLevel + selectedTurret.UpgradeThreeLevel == 3;
+		foreach(Button button in upgradeButtons)
+			button.interactable = !isMaxLevel;
 		
         upgradeBackground.color = new Color(SelectedTurret.focusMenuRed, SelectedTurret.focusMenuGreen, SelectedTurret.focusMenuBlue, .8f);
 		selectedTurretBackground.color = new Color(SelectedTurret.focusMenuRed, SelectedTurret.focusMenuGreen, SelectedTurret.focusMenuBlue, .8f);
@@ -249,16 +253,16 @@ public class TurretFocusMenu : MonoBehaviour
 		int upgradeType = 0;
 		foreach (GameObject obj in GameObject.FindGameObjectsWithTag(Tags.upgradeButton))
 		{
+			// The struggle
 			int upTypeReal = upgradeType;
 
 			upgradeIcons.Add (obj.transform.Find("UpgradeImage").GetComponent<RawImage> ());
 			upgradeNames.Add(obj.transform.Find("UpgradeName").GetComponent<Text>());
+			upgradeButtons.Add(obj.GetComponent<Button>());
 
 			UnityEngine.Events.UnityAction action1 = () => { Upgrade(upTypeReal); };
 			obj.GetComponent<Button>().onClick.AddListener(action1);
 			upgradeType++;
-
-
 		}
 
 		LoadIcons ();
@@ -266,6 +270,9 @@ public class TurretFocusMenu : MonoBehaviour
 		// Turret Upgrade Menu
 		upgradeMenu = GameObject.Find ("UpgradeMenu");
 		upgradeAnimator = upgradeMenu.GetComponent<Animator>();
+
+		
+		sellPrice = GameObject.Find ("CashBack").GetComponent<Text> ();
 	}
 
 	private void LoadIcons()
