@@ -34,6 +34,8 @@ public class GuiButtonMethods : MonoBehaviour
 	private GameObject upgradeMenu;
 	private Animator upgradeAnimator;
 
+	private Text speedDisplay;
+
 	private bool gridToggle = true;
     
     void Start()
@@ -85,6 +87,8 @@ public class GuiButtonMethods : MonoBehaviour
 		// Turret Upgrade Menu
 		upgradeMenu = GameObject.Find ("UpgradeMenu");
 		upgradeAnimator = upgradeMenu.GetComponent<Animator>();
+
+		speedDisplay = GameObject.Find ("CurrentSpeed").GetComponent<Text> ();
 
 	}
 	
@@ -280,14 +284,17 @@ public class GuiButtonMethods : MonoBehaviour
 		{
 		case GameSpeed.Paused:
 			objectManager.gameState.gameSpeed = GameSpeed.X1;
+			speedDisplay.text = "x1";
 			break;
 
 		case GameSpeed.X1:
 			objectManager.gameState.gameSpeed = GameSpeed.X2;
+			speedDisplay.text = "x2";
 			break;
 
 		case GameSpeed.X2:
 			objectManager.gameState.gameSpeed = GameSpeed.X3;
+			speedDisplay.text = "x3";
 			break;
 		}
 		Debug.Log (objectManager.gameState.gameSpeed);
@@ -299,14 +306,17 @@ public class GuiButtonMethods : MonoBehaviour
 		{
 		case GameSpeed.X1:
 			objectManager.gameState.gameSpeed = GameSpeed.Paused;
+			speedDisplay.text = "II";
 			break;
 			
 		case GameSpeed.X2:
 			objectManager.gameState.gameSpeed = GameSpeed.X1;
+			speedDisplay.text = "x1";
 			break;
 
 		case GameSpeed.X3:
 			objectManager.gameState.gameSpeed = GameSpeed.X2;
+			speedDisplay.text = "x2";
 			break;
 		}
 
