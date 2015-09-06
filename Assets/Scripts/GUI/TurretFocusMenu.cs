@@ -33,6 +33,10 @@ public class TurretFocusMenu : MonoBehaviour
         set
         {
             Turret oldSelectedTurret = selectedTurret;
+
+			if(selectedTurret != null && value == null)
+				upgradeAnimator.SetTrigger("Swipe Out");
+
             selectedTurret = value;
 
             if (oldSelectedTurret != null)
@@ -46,10 +50,6 @@ public class TurretFocusMenu : MonoBehaviour
 				upgradeAnimator.SetTrigger ("Swipe In");
                 AttachToTurret();
             }
-			else
-			{
-				upgradeAnimator.SetTrigger("Swipe Out");
-			}
         }
     }
 
