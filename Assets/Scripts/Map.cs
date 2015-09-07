@@ -183,13 +183,13 @@ public class Map : MonoBehaviour
 
 		foreach (Wave wave in currentWaves) {
 
-			if(_ObjectManager.gameState.gameSpeed == GameSpeed.Paused)
+			if(_ObjectManager.gameState.GameSpeed == GameSpeed.Paused)
 			{
 				wave.nextEnemySpawnEvent += Time.deltaTime;
 			}
 			else 
 			{
-				wave.nextEnemySpawnEvent -= (Time.deltaTime * (float)_ObjectManager.gameState.gameSpeed) - Time.deltaTime;
+				wave.nextEnemySpawnEvent -= (Time.deltaTime * (float)_ObjectManager.gameState.GameSpeed) - Time.deltaTime;
 			}
 
 			if (Time.time >= wave.nextEnemySpawnEvent && wave.numberOfEnemies > 0) {
@@ -286,13 +286,13 @@ public class Map : MonoBehaviour
 	{
 		if(_ObjectManager.gameState.gameStarted && !_ObjectManager.gameState.gameOver){
 
-			if(_ObjectManager.gameState.gameSpeed == GameSpeed.Paused)
+			if(_ObjectManager.gameState.GameSpeed == GameSpeed.Paused)
 			{
 				nextWaveSpawnEvent += Time.deltaTime;
 			}
 			else 
 			{
-				nextWaveSpawnEvent -= (Time.deltaTime * (float)_ObjectManager.gameState.gameSpeed) - Time.deltaTime;
+				nextWaveSpawnEvent -= (Time.deltaTime * (float)_ObjectManager.gameState.GameSpeed) - Time.deltaTime;
 			}
 
 

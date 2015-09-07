@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 	// Configurable
 	public float range;
 	public float speed;
-	public float Speed { get{return speed * (float)objectManager.gameState.gameSpeed;} set{speed = value;} }
+	public float Speed { get{return speed * (float)objectManager.gameState.GameSpeed;} set{speed = value;} }
 	public EnemyBase target;
 	public Vector3 targetPosition;
 

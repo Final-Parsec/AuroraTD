@@ -127,7 +127,7 @@ public class EnemyBase : MonoBehaviour
 		if(path == null)
 			return;
 
-		animator.speed = 5 * (speed/20 + 1) * (float)_ObjectManager.gameState.gameSpeed;
+		animator.speed = 5 * (speed/20 + 1) * (float)_ObjectManager.gameState.GameSpeed;
 		SetState((int)State.Walking);
 
 		// don't move in the Y direction.
@@ -136,9 +136,9 @@ public class EnemyBase : MonoBehaviour
 		                                 transform.position.z - path [currentWayPoint].unityPosition.z).normalized;
 		
 		// update the position
-		transform.position = new Vector3 (transform.position.x - moveVector.x * (speed * (float)_ObjectManager.gameState.gameSpeed) * Time.deltaTime,
+		transform.position = new Vector3 (transform.position.x - moveVector.x * (speed * (float)_ObjectManager.gameState.GameSpeed) * Time.deltaTime,
 		                                 transform.position.y,
-		                                  transform.position.z - moveVector.z * (speed * (float)_ObjectManager.gameState.gameSpeed) * Time.deltaTime);
+		                                  transform.position.z - moveVector.z * (speed * (float)_ObjectManager.gameState.GameSpeed) * Time.deltaTime);
 		
 		// unit has reached the waypoint
 		Vector3 position = transform.position;
@@ -193,7 +193,7 @@ public class EnemyBase : MonoBehaviour
 
 	public void FlashDebuffColor ()
 	{
-		if (_ObjectManager.gameState.gameSpeed == GameSpeed.Paused) 
+		if (_ObjectManager.gameState.GameSpeed == GameSpeed.Paused) 
 		{
 			foreach(Debuff debuff in debuffs)
 			{
@@ -202,12 +202,12 @@ public class EnemyBase : MonoBehaviour
 			}
 			return;
 		} 
-		else if (_ObjectManager.gameState.gameSpeed != GameSpeed.X1)
+		else if (_ObjectManager.gameState.GameSpeed != GameSpeed.X1)
 		{
 			foreach(Debuff debuff in debuffs)
 			{
-				debuff.duration -= (Time.deltaTime * (float)_ObjectManager.gameState.gameSpeed) - Time.deltaTime;
-				debuff.nextEvent -= (Time.deltaTime * (float)_ObjectManager.gameState.gameSpeed) - Time.deltaTime;
+				debuff.duration -= (Time.deltaTime * (float)_ObjectManager.gameState.GameSpeed) - Time.deltaTime;
+				debuff.nextEvent -= (Time.deltaTime * (float)_ObjectManager.gameState.GameSpeed) - Time.deltaTime;
 			}
 			return;
 		}

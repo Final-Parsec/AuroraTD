@@ -34,7 +34,7 @@ public class GuiButtonMethods : MonoBehaviour
 	private GameObject upgradeMenu;
 	private Animator upgradeAnimator;
 
-	private Text speedDisplay;
+
 
 	private bool gridToggle = true;
     
@@ -88,7 +88,6 @@ public class GuiButtonMethods : MonoBehaviour
 		upgradeMenu = GameObject.Find ("UpgradeMenu");
 		upgradeAnimator = upgradeMenu.GetComponent<Animator>();
 
-		speedDisplay = GameObject.Find ("CurrentSpeed").GetComponent<Text> ();
 
 	}
 	
@@ -280,46 +279,37 @@ public class GuiButtonMethods : MonoBehaviour
 
 	public void SpeedUp()
 	{
-		switch(objectManager.gameState.gameSpeed)
+		switch(objectManager.gameState.GameSpeed)
 		{
 		case GameSpeed.Paused:
-			objectManager.gameState.gameSpeed = GameSpeed.X1;
-			speedDisplay.text = "x1";
+			objectManager.gameState.GameSpeed = GameSpeed.X1;
 			break;
 
 		case GameSpeed.X1:
-			objectManager.gameState.gameSpeed = GameSpeed.X2;
-			speedDisplay.text = "x2";
+			objectManager.gameState.GameSpeed = GameSpeed.X2;
 			break;
 
 		case GameSpeed.X2:
-			objectManager.gameState.gameSpeed = GameSpeed.X3;
-			speedDisplay.text = "x3";
+			objectManager.gameState.GameSpeed = GameSpeed.X3;
 			break;
 		}
-		Debug.Log (objectManager.gameState.gameSpeed);
 	}
 
 	public void SlowDown()
 	{
-		switch(objectManager.gameState.gameSpeed)
+		switch(objectManager.gameState.GameSpeed)
 		{
 		case GameSpeed.X1:
-			objectManager.gameState.gameSpeed = GameSpeed.Paused;
-			speedDisplay.text = "II";
+			objectManager.gameState.GameSpeed = GameSpeed.Paused;
 			break;
 			
 		case GameSpeed.X2:
-			objectManager.gameState.gameSpeed = GameSpeed.X1;
-			speedDisplay.text = "x1";
+			objectManager.gameState.GameSpeed = GameSpeed.X1;
 			break;
 
 		case GameSpeed.X3:
-			objectManager.gameState.gameSpeed = GameSpeed.X2;
-			speedDisplay.text = "x2";
+			objectManager.gameState.GameSpeed = GameSpeed.X2;
 			break;
 		}
-
-		Debug.Log (objectManager.gameState.gameSpeed);
 	}
 }

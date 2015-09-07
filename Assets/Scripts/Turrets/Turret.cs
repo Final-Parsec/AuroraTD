@@ -223,7 +223,7 @@ public class Turret : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if(objectManager.gameState.gameSpeed == GameSpeed.Paused)
+		if(objectManager.gameState.GameSpeed == GameSpeed.Paused)
 		{
 			nextDamageEvent += Time.deltaTime;
 			return;
@@ -242,7 +242,7 @@ public class Turret : MonoBehaviour
             }
             else
             {
-				nextDamageEvent = Time.time + (AttackDelay * 1f/(float)objectManager.gameState.gameSpeed);
+				nextDamageEvent = Time.time + (AttackDelay * 1f/(float)objectManager.gameState.GameSpeed);
                 myTargets.Remove(myTarget);
             }              
         }
