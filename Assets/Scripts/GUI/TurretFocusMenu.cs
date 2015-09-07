@@ -63,6 +63,8 @@ public class TurretFocusMenu : MonoBehaviour
 	// Called when the sell button is pressed.
 	public void Sell()
     {
+		objectManager.GuiButtonMethods.PlaySellSound();
+
         objectManager.gameState.playerMoney += SelectedTurret.Msrp;
         objectManager.Map.UnBlockNode(SelectedTurret.transform.position);
         Destroy(SelectedTurret.gameObject);
@@ -71,6 +73,8 @@ public class TurretFocusMenu : MonoBehaviour
 
 	public void Upgrade(int upgradeType)
 	{
+		objectManager.GuiButtonMethods.PlayDefaultSound();
+
 		switch (upgradeType) 
 		{
 		case 0:

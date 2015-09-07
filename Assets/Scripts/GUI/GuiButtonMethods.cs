@@ -2,9 +2,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using SimpleJSON;
 
+[RequireComponent(typeof(AudioSource))]
 public class GuiButtonMethods : MonoBehaviour
 {
 	private const string Url = "http://finalparsec.com/scores/";
@@ -34,13 +36,18 @@ public class GuiButtonMethods : MonoBehaviour
 	private GameObject upgradeMenu;
 	private Animator upgradeAnimator;
 
-
+	private AudioSource audioSource;
+	private Dictionary<string, AudioClip> audioClips = new Dictionary<string, AudioClip>();
 
 	private bool gridToggle = true;
     
     void Start()
     {
 		objectManager = ObjectManager.GetInstance();
+		audioSource = GetComponent<AudioSource>();
+		// Load Audio Clips
+		audioClips.Add("defaultPress" , Resources.Load("GUI/Sounds/ButtonPress") as AudioClip);
+		audioClips.Add("sellPress", Resources.Load("GUI/Sounds/SellPress") as AudioClip);
 		
 		// Turret Selection Buttons
 		GameObject turretButtonPanel = GameObject.Find ("TurretSelectPanel");
@@ -124,7 +131,8 @@ public class GuiButtonMethods : MonoBehaviour
 	}
 
     public void TurretButtonPressed(int turretType)
-    {
+	{
+		PlayDefaultSound();
         objectManager.TurretFactory.TurretType = (TurretType)turretType;
 
 		foreach (CanvasGroup uiSprite in canvasGroups)
@@ -132,11 +140,12 @@ public class GuiButtonMethods : MonoBehaviour
             uiSprite.alpha = .7f;
         }
 
-		canvasGroups[turretType].alpha = 1f;        
+		canvasGroups[turretType].alpha = 1f;   
     }
 
 	public void SendWavePressed()
 	{
+		PlayDefaultSound();
 		if (!objectManager.gameState.gameStarted)
 		{
 			
@@ -164,6 +173,7 @@ public class GuiButtonMethods : MonoBehaviour
 
 	public void OptionPressed()
 	{
+		PlayDefaultSound();
 
 		if ((objectManager.Map.upcomingWaves.Count == 0 &&
 		     objectManager.enemies.Count == 0 &&
@@ -183,29 +193,34 @@ public class GuiButtonMethods : MonoBehaviour
 
 	public void MutePressed()
 	{
+		PlayDefaultSound();
 		var objectManager = ObjectManager.GetInstance();
 		objectManager.gameState.isMuted = !objectManager.gameState.isMuted;
 	}
 
 	public void DisplayGridPressed()
 	{
+		PlayDefaultSound();
 		gridToggle = !gridToggle;
 		objectManager.Map.SetGrid(gridToggle);
 	}
 
 	public void QuitPressed()
 	{
+		PlayDefaultSound();
 		Application.Quit ();
 	}
 
 	public void MainMenuPressed()
 	{
+		PlayDefaultSound();
 		objectManager.DestroySinglton();
 		Application.LoadLevel("Main Menu");
 	}
 
 	public void HighScorePressed()
 	{
+		PlayDefaultSound();
 		gameOverScreen.SetActive (false);
 
 		submitScoreScreen.SetActive (true);
@@ -214,6 +229,7 @@ public class GuiButtonMethods : MonoBehaviour
 
 	public void SubmitScorePressed()
 	{
+		PlayDefaultSound();
 
 		if (string.IsNullOrEmpty(GameObject.Find("PlayerNameTextField").GetComponent<Text>().text))
 		{
@@ -274,11 +290,13 @@ public class GuiButtonMethods : MonoBehaviour
 
 	public void UpgradeMenuBackPressed()
 	{
+		PlayDefaultSound();
 		objectManager.TurretFocusMenu.SelectedTurret = null;
 	}
 
 	public void SpeedUp()
 	{
+		PlayDefaultSound();
 		switch(objectManager.gameState.GameSpeed)
 		{
 		case GameSpeed.Paused:
@@ -297,6 +315,7 @@ public class GuiButtonMethods : MonoBehaviour
 
 	public void SlowDown()
 	{
+		PlayDefaultSound();
 		switch(objectManager.gameState.GameSpeed)
 		{
 		case GameSpeed.X1:
@@ -311,5 +330,17 @@ public class GuiButtonMethods : MonoBehaviour
 			objectManager.gameState.GameSpeed = GameSpeed.X2;
 			break;
 		}
+	}
+
+	public void PlaySellSound()
+	{
+		if(!objectManager.gameState.isMuted)
+			audioSource.PlayOneShot(audioClips["sellPress"]);
+	}
+
+	public void PlayDefaultSound()
+	{
+		if(!objectManager.gameState.isMuted)
+			audioSource.PlayOneShot(audioClips["defaultPress"]);
 	}
 }

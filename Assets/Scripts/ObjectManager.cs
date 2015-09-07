@@ -72,6 +72,16 @@ public class ObjectManager
 		} 
 	}
 
+	private GuiButtonMethods guiButtonMethods;
+	public GuiButtonMethods GuiButtonMethods 
+	{ 
+		get{
+			if(guiButtonMethods == null)
+				guiButtonMethods = GameObject.Find("Main Camera").GetComponent<GuiButtonMethods>();
+			return guiButtonMethods;
+		} 
+	}
+
 	public ObjectManager ()
 	{
 		ObjectManager.instance = this;
