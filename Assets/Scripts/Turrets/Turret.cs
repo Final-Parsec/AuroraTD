@@ -11,12 +11,13 @@ public class Turret : MonoBehaviour
     public int aoeRange = 0;
 	public int damage = 10;
     public int damageOverTime = 0;
+	public int range = 5;
+	public int rateOfFire = 5;
+
 	public float focusMenuBlue = 0;
 	public float focusMenuGreen = 175;
 	public float focusMenuRed = 0;
 	public GameObject projectileType;
-	public int range = 5;
-	public int rateOfFire = 5;
 	public Sprite selectedSprite;
     public Sprite levelOneSprite;
     public Sprite levelTwoSprite;

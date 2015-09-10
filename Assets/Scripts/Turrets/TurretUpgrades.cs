@@ -1,9 +1,12 @@
 ﻿namespace Assets.Scripts.Turrets
 {
     using UnityEngine;
+	using System.Collections.Generic;
 
     public static class TurretUpgrades
     {
+		private static Dictionary<string, Stat[]> upgrades = new Dictionary<string, Stat[]>();
+
 		static public int quakeCost = 30;
 		static public int meteorShowerCost = 20;
 		static public int rootBindingCost = 30;
@@ -21,6 +24,22 @@
 		static public int hexCost = 20;
 
 		static public float costScaling = .5f; // costs of upgrades increase by 50% with each upgrade
+
+		public static void MakeUpgrades()
+		{
+			Stat[] stats = {	new Stat("range",-1f,"RNG"),
+				new Stat("rateOfFire",1f,"ROF"),
+				new Stat("range",-1f,"RNG"),
+				new Stat("range",-1f,"RNG")};
+
+			upgrades.Add("Quake", stats);
+
+
+
+
+
+
+		}
 
         #region Earth Type Upgrades
 
