@@ -13,6 +13,9 @@ public class Turret : MonoBehaviour
     public int damageOverTime = 0;
 	public int range = 5;
 	public int rateOfFire = 5;
+	public float Slow { get; set; }
+	public float SlowDuration { get; set; }
+	public int MindControlDuration { get; set; }
 
 	public float focusMenuBlue = 0;
 	public float focusMenuGreen = 175;
@@ -136,21 +139,79 @@ public class Turret : MonoBehaviour
             level = value;
         }
     }
-
-    public int MindControlDuration { get; set; }
-    
+	 
     // How much the turret can be sold for. 
     // Based on upgrades, bling, and current market conditions.
     public int Msrp { get; set; }
 
-    public float Slow { get; set; }
-    public float SlowDuration { get; set; }
+    
 
     public TurretType TurretType { get; set; }
 
     public int UpgradeOneLevel { get; set; }
     public int UpgradeTwoLevel { get; set; }
     public int UpgradeThreeLevel { get; set; }
+
+
+	public void UpgradeTurret(Upgrade upgrade, int upgradeLevel)
+	{
+		if (upgrade.Cost > objectManager.gameState.playerMoney)
+			return;
+		objectManager.gameState.playerMoney -= (int)upgrade.Cost;
+		Msrp += (int)upgrade.Cost / 2;
+
+		switch(upgradeLevel)
+		{
+		case 1:
+			UpgradeOneLevel++;
+			break;
+		case 2:
+			UpgradeTwoLevel++;
+			break;
+		case 3:
+			UpgradeThreeLevel++;
+			break;
+		}
+
+		Level++;     
+
+		foreach(Stat stat in upgrade.stats)
+		{
+			switch(stat.AttribId)
+			{
+			case Attribute.Range:
+				DetectionRadius += stat.Value;
+				break;
+			case Attribute.RateOfFire:
+				rateOfFire += (int)stat.Value;
+				break;
+			case Attribute.AoeDamage:
+				aoeDamage += (int)stat.Value;
+				break;
+			case Attribute.AoeRange:
+				aoeRange += (int)stat.Value;
+				break;
+			case Attribute.Damage:
+				damage += (int)stat.Value;
+				break;
+			case Attribute.DamageOverTime:
+				damageOverTime += (int)stat.Value;
+				break;
+			case Attribute.Slow:
+				Slow += stat.Value;
+				break;
+			case Attribute.SlowDuration:
+				SlowDuration += stat.Value;
+				break;
+			case Attribute.MindControlDuration:
+				MindControlDuration += (int)stat.Value;
+				break;
+			default:
+				Debug.Log("Unknown upgrade " + stat.Name);
+				break;
+			}
+		}
+	}
 
 
 	// Runs when entity is Instantiated

@@ -164,9 +164,9 @@ public class TurretFocusMenu : MonoBehaviour
 		case TurretType.EarthTurret:
 			if (selectedTurret.UpgradeOneLevel + selectedTurret.UpgradeTwoLevel + selectedTurret.UpgradeThreeLevel != 3)
 			{
-				upgradeNames[0].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.quakeCost, selectedTurret.UpgradeOneLevel)+" ";
-				upgradeNames[1].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.meteorShowerCost, selectedTurret.UpgradeTwoLevel)+" ";
-				upgradeNames[2].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.rootBindingCost, selectedTurret.UpgradeThreeLevel)+" ";
+				upgradeNames[0].text =  TurretUpgrades.earthUpgrades["Quake"][selectedTurret.UpgradeOneLevel].Cost+" ";
+				upgradeNames[1].text =  TurretUpgrades.earthUpgrades["Meteor Shower"][selectedTurret.UpgradeTwoLevel].Cost+" ";
+				upgradeNames[2].text =  TurretUpgrades.earthUpgrades["Root Binding"][selectedTurret.UpgradeThreeLevel].Cost+" ";
 			}
 			
 			upgradeNames[0].text += "Quake";
@@ -263,6 +263,8 @@ public class TurretFocusMenu : MonoBehaviour
 	
 	// Use this for initialization
 	void Start () {
+		TurretUpgrades.MakeUpgrades ();
+
 		upgradeBackground = GameObject.FindGameObjectWithTag(Tags.upgradePanel).GetComponent<Image>();
 		selectedTurretBackground = GameObject.FindGameObjectWithTag(Tags.selectedTurretPanel).GetComponent<Image> ();
 		selectedTurretImage = GameObject.FindGameObjectWithTag(Tags.selectedTurretPanel).transform.FindChild("SelectedImage").GetComponent<Image> ();
