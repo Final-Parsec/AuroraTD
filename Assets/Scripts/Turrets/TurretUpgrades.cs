@@ -48,20 +48,20 @@ namespace Assets.Scripts.Turrets
 			stats = new Stat[] {
 				new Stat(Attribute.Range, "Range",-1f,"RNG"),
 				new Stat(Attribute.RateOfFire,"Rate of Fire",-1f,"ROF"),
-				new Stat(Attribute.AoeDamage,"Splash Damage",1f,"SDM")
+				new Stat(Attribute.AoeDamage,"AOE Damage",1f,"AOD")
 			};
 
 			upgrades[0] = new Upgrade ("Meteor Shower", "Meteors that cause splash damage to near by enemies!", 20, stats);
 
 			stats = new Stat[] {
-				new Stat (Attribute.AoeDamage, "Splash Damage", 1f, "SDM")
+				new Stat (Attribute.AoeDamage, "AOE Damage", 1f, "AOD")
 			};
 			upgrades[1] = new Upgrade ("Meteor Shower", "Meteors that cause splash damage to near by enemies!", 30, stats);
 
 			stats = new Stat[] {
 				new Stat(Attribute.Range, "Range", -1f, "RNG"),
-				new Stat(Attribute.AoeDamage,"Splash Damage", 2f,"SDM"),
-				new Stat(Attribute.AoeRange,"Splash Radius",1f,"SRD")
+				new Stat(Attribute.AoeDamage,"AOE Damage", 2f,"AOD"),
+				new Stat(Attribute.AoeRange,"AOE Radius",1f,"AOE")
 			};
 			upgrades[2] = new Upgrade ("Meteor Shower", "Meteors that cause splash damage to near by enemies!", 40, stats);
 
@@ -94,7 +94,74 @@ namespace Assets.Scripts.Turrets
 			earthUpgrades.Add("Root Binding", upgrades);
 
 
+			//Inferno
+			upgrades = new Upgrade[3];
+			stats = new Stat[] {
+				new Stat(Attribute.RateOfFire,"Rate of Fire",1f,"ROF"),
+				new Stat(Attribute.Damage,"Damage",-1f,"SLW")
+			};
+			
+			upgrades[0] = new Upgrade ("Inferno", "Devistate enemies with rapidly fired fireballs!", 40, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.RateOfFire,"Rate of Fire",1f,"ROF")
+			};
+			upgrades[1] = new Upgrade ("Inferno", "Devistate enemies with rapidly fired fireballs!", 60, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.RateOfFire,"Rate of Fire",1f,"ROF")
+			};
+			upgrades[2] = new Upgrade ("Inferno", "Devistate enemies with rapidly fired fireballs!", 80, stats);
+			
+			earthUpgrades.Add("Inferno", upgrades);
 
+
+			//Armageddon
+			upgrades = new Upgrade[3];
+			stats = new Stat[] {
+				new Stat(Attribute.AoeDamage,"AOE Damage", 1f,"AOD"),
+				new Stat(Attribute.AoeRange,"AOE Radius",1f,"AOE"),
+				new Stat(Attribute.RateOfFire,"Rate of Fire",-2f,"ROF")
+			};
+			
+			upgrades[0] = new Upgrade ("Armageddon", "Deal damage to multiple enemies!", 40, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.AoeDamage,"AOE Damage", 2f,"AOD"),
+				new Stat(Attribute.AoeRange,"AOE Radius",1f,"AOE"),
+				new Stat(Attribute.RateOfFire,"Rate of Fire",-1f,"ROF")
+			};
+			upgrades[1] = new Upgrade ("Armageddon", "Deal damage to multiple enemies!", 60, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.AoeDamage,"AOE Damage", 2f,"AOD"),
+				new Stat(Attribute.AoeRange,"AOE Radius",2f,"AOE")
+			};
+			upgrades[2] = new Upgrade ("Armageddon", "Deal damage to multiple enemies!", 80, stats);
+			
+			earthUpgrades.Add("Armageddon", upgrades);
+
+
+			//Burn
+			upgrades = new Upgrade[3];
+			stats = new Stat[] {
+				new Stat(Attribute.DamageOverTime,"Damage Over Time", 1f,"DOT"),
+				new Stat(Attribute.RateOfFire,"Rate of Fire",-1f,"ROF")
+			};
+			
+			upgrades[0] = new Upgrade ("Burn", "Burn an enemy for damage over time!", 20, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.DamageOverTime,"Damage Over Time", 1f,"DOT")
+			};
+			upgrades[1] = new Upgrade ("Burn", "Burn an enemy for damage over time!", 30, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.DamageOverTime,"Damage Over Time", 2f,"DOT")
+			};
+			upgrades[2] = new Upgrade ("Burn", "Burn an enemy for damage over time!", 40, stats);
+			
+			earthUpgrades.Add("Burn", upgrades);
 
 
 		}
@@ -168,32 +235,9 @@ namespace Assets.Scripts.Turrets
 	        if (MaxLevels(turret))
 	            return;
 
-			ObjectManager objectManager = ObjectManager.GetInstance();
-			int upgradeCost = infernoCost;
-				upgradeCost += (int)(upgradeCost * turret.UpgradeOneLevel * costScaling);
-	        if (upgradeCost > objectManager.gameState.playerMoney)
-	            return;
-	        objectManager.gameState.playerMoney -= upgradeCost;
-	        turret.Msrp += upgradeCost / 2;
-
-	        turret.UpgradeOneLevel++;
-	        turret.Level++;
-
 	        Debug.Log("Inferno Upgrade Level " + turret.UpgradeOneLevel);
 
-	        switch (turret.UpgradeOneLevel)
-	        {
-	            case 1:
-	                turret.rateOfFire++;
-	                turret.damage--;
-	                break;
-	            case 2:
-	                turret.rateOfFire++;
-	                break;
-	            case 3:
-	                turret.rateOfFire++;
-	                break;
-	        }
+			turret.UpgradeTurret(earthUpgrades["Inferno"][turret.UpgradeOneLevel], 1);
 	    }
 
 	    // Armageddon
@@ -208,37 +252,9 @@ namespace Assets.Scripts.Turrets
 	        if (MaxLevels(turret))
 	            return;
 
-			ObjectManager objectManager = ObjectManager.GetInstance();
-			int upgradeCost = armageddonCost;
-			upgradeCost += (int)(upgradeCost * turret.UpgradeTwoLevel * costScaling);
-	        if (upgradeCost > objectManager.gameState.playerMoney)
-	            return;
-	        objectManager.gameState.playerMoney -= upgradeCost;
-	        turret.Msrp += upgradeCost / 2;
-
-	        turret.UpgradeTwoLevel++;
-	        turret.Level++;
-
 	        Debug.Log("Armageddon Upgrade Level " + turret.UpgradeTwoLevel);
 
-	        switch (turret.UpgradeTwoLevel)
-	        {
-	            case 1:
-	                turret.aoeDamage++;
-	                turret.aoeRange++;                    
-	                turret.rateOfFire--;
-	                break;
-	            case 2:
-	                turret.aoeDamage++;
-	                turret.aoeRange++;
-	                turret.rateOfFire--;
-	                break;
-	            case 3:
-	                turret.aoeDamage++;
-	                turret.aoeRange++;
-	                turret.rateOfFire--;
-	                break;
-	        }
+			turret.UpgradeTurret(earthUpgrades["Armageddon"][turret.UpgradeTwoLevel], 2);
 	    }
 
 	    // Burn
@@ -253,32 +269,9 @@ namespace Assets.Scripts.Turrets
 	        if (MaxLevels(turret))
 	            return;
 
-			ObjectManager objectManager = ObjectManager.GetInstance();
-			int upgradeCost = burnCost;
-			upgradeCost += (int)(upgradeCost * turret.UpgradeThreeLevel * costScaling);
-	        if (upgradeCost > objectManager.gameState.playerMoney)
-	            return;
-	        objectManager.gameState.playerMoney -= upgradeCost;
-	        turret.Msrp += upgradeCost / 2;
-
-	        turret.UpgradeThreeLevel++;
-	        turret.Level++;
-
 	        Debug.Log("Burn Upgrade Level " + turret.UpgradeThreeLevel);
-
-	        switch (turret.UpgradeThreeLevel)
-	        {
-	            case 1:
-	                turret.rateOfFire--;
-	                turret.damageOverTime++;
-	                break;
-	            case 2:
-	                turret.damageOverTime++;
-	                break;
-	            case 3:
-	                turret.damageOverTime++;
-	                break;
-	        }
+			
+			turret.UpgradeTurret(earthUpgrades["Burn"][turret.UpgradeThreeLevel], 3);
 	    }
 
 	    #endregion
