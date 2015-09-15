@@ -207,7 +207,7 @@ public class Turret : MonoBehaviour
 				MindControlDuration += (int)stat.Value;
 				break;
 			default:
-				Debug.Log("Unknown upgrade " + stat.Name);
+				Debug.Log("Unknown upgrade " + stat.AttribId);
 				break;
 			}
 		}
@@ -309,5 +309,22 @@ public class Turret : MonoBehaviour
             }              
         }
 			
+	}
+
+	public string GetStats()
+	{
+		string str = "";
+
+		str += StatInfo.statInfo[Attribute.Damage].Acronym + "=" + damage + "\t" ;
+		str += StatInfo.statInfo[Attribute.Range].Acronym + "=" + range + "\t" ;
+		str += StatInfo.statInfo[Attribute.RateOfFire].Acronym + "=" + rateOfFire + "\t" ;
+		str += aoeDamage > 0?StatInfo.statInfo[Attribute.AoeDamage].Acronym + "=" + aoeDamage + "\t":"";
+		str += aoeRange > 0?StatInfo.statInfo[Attribute.AoeRange].Acronym + "=" + aoeRange + "\t":"";
+		str += damageOverTime > 0?StatInfo.statInfo[Attribute.DamageOverTime].Acronym + "=" + damageOverTime + "\t":"";
+		str += Slow > 0?StatInfo.statInfo[Attribute.Slow].Acronym + "=" + Slow + "\t":"";
+		str += SlowDuration > 0?StatInfo.statInfo[Attribute.SlowDuration].Acronym + "=" + SlowDuration + "\t":"";
+		str += MindControlDuration > 0?StatInfo.statInfo[Attribute.MindControlDuration].Acronym + "=" + MindControlDuration + "\t":"";
+
+		return str;
 	}
 }

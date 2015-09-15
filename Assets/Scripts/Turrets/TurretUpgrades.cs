@@ -7,7 +7,7 @@ namespace Assets.Scripts.Turrets
 
 	public static class TurretUpgrades
 	{
-		public static Dictionary<string, Upgrade[]> earthUpgrades = new Dictionary<string, Upgrade[]>();
+		public static Dictionary<string, Upgrade[]> upgrades = new Dictionary<string, Upgrade[]>();
 
 		static public int infernoCost = 40;
 		static public int armageddonCost = 20;
@@ -28,141 +28,283 @@ namespace Assets.Scripts.Turrets
 
 			//Quake
 			Stat[] stats = {
-				new Stat(Attribute.Range, "Range",-1f,"RNG"),
-				new Stat(Attribute.RateOfFire,"Rate of Fire",1f,"ROF"),
-				new Stat(Attribute.Slow,"Slow",.1f,"SLW"),
-				new Stat(Attribute.SlowDuration,"Slow Duration",1f,"SLD")
+				new Stat(Attribute.Range,-1f),
+				new Stat(Attribute.RateOfFire,1f),
+				new Stat(Attribute.Slow,.1f),
+				new Stat(Attribute.SlowDuration,1f)
 			};
 
-			Upgrade[] upgrades = new Upgrade[] {
+			Upgrade[] tempUpgrades = new Upgrade[] {
 				new Upgrade ("Quake", "A tremendous earth quake that slows enemies!", 30, stats),
 				new Upgrade ("Quake", "A tremendous earth quake that slows enemies!", 45, stats),
 				new Upgrade ("Quake", "A tremendous earth quake that slows enemies!", 60, stats)
 			};
 
-			earthUpgrades.Add("Quake", upgrades);
+			upgrades.Add("Quake", tempUpgrades);
 
 
 			//Meteor Shower
-			upgrades = new Upgrade[3];
+			tempUpgrades = new Upgrade[3];
 			stats = new Stat[] {
-				new Stat(Attribute.Range, "Range",-1f,"RNG"),
-				new Stat(Attribute.RateOfFire,"Rate of Fire",-1f,"ROF"),
-				new Stat(Attribute.AoeDamage,"AOE Damage",1f,"AOD")
+				new Stat(Attribute.Range,-1f),
+				new Stat(Attribute.RateOfFire,-1f),
+				new Stat(Attribute.AoeDamage,1f)
 			};
 
-			upgrades[0] = new Upgrade ("Meteor Shower", "Meteors that cause splash damage to near by enemies!", 20, stats);
+			tempUpgrades[0] = new Upgrade ("Meteor Shower", "Meteors that cause splash damage to near by enemies!", 20, stats);
 
 			stats = new Stat[] {
-				new Stat (Attribute.AoeDamage, "AOE Damage", 1f, "AOD")
+				new Stat (Attribute.AoeDamage, 1f)
 			};
-			upgrades[1] = new Upgrade ("Meteor Shower", "Meteors that cause splash damage to near by enemies!", 30, stats);
+			tempUpgrades[1] = new Upgrade ("Meteor Shower", "Meteors that cause splash damage to near by enemies!", 30, stats);
 
 			stats = new Stat[] {
-				new Stat(Attribute.Range, "Range", -1f, "RNG"),
-				new Stat(Attribute.AoeDamage,"AOE Damage", 2f,"AOD"),
-				new Stat(Attribute.AoeRange,"AOE Radius",1f,"AOE")
+				new Stat(Attribute.Range, -1f),
+				new Stat(Attribute.AoeDamage, 2f),
+				new Stat(Attribute.AoeRange,1f)
 			};
-			upgrades[2] = new Upgrade ("Meteor Shower", "Meteors that cause splash damage to near by enemies!", 40, stats);
+			tempUpgrades[2] = new Upgrade ("Meteor Shower", "Meteors that cause splash damage to near by enemies!", 40, stats);
 
-			earthUpgrades.Add("Meteor Shower", upgrades);
+			upgrades.Add("Meteor Shower", tempUpgrades);
 
 
 			//Root Binding
-			upgrades = new Upgrade[3];
+			tempUpgrades = new Upgrade[3];
 			stats = new Stat[] {
-				new Stat(Attribute.RateOfFire,"Rate of Fire",-1f,"ROF"),
-				new Stat(Attribute.Slow,"Slow",.8f,"SLW"),
-				new Stat(Attribute.SlowDuration,"Slow Duration",1f,"SLD")
+				new Stat(Attribute.RateOfFire,-1f),
+				new Stat(Attribute.Slow,.8f),
+				new Stat(Attribute.SlowDuration,1f)
 			};
 			
-			upgrades[0] = new Upgrade ("Root Binding", "Entangle enemies in roots to severly slow them down!", 30, stats);
+			tempUpgrades[0] = new Upgrade ("Root Binding", "Entangle enemies in roots to severly slow them down!", 30, stats);
 			
 			stats = new Stat[] {
-				new Stat(Attribute.RateOfFire,"Rate of Fire",-1f,"ROF"),
-				new Stat(Attribute.Slow,"Slow",.1f,"SLW"),
-				new Stat(Attribute.SlowDuration,"Slow Duration",1f,"SLD")
+				new Stat(Attribute.RateOfFire,-1f),
+				new Stat(Attribute.Slow,.1f),
+				new Stat(Attribute.SlowDuration,1f)
 			};
-			upgrades[1] = new Upgrade ("Root Binding", "Entangle enemies in roots to severly slow them down!", 45, stats);
+			tempUpgrades[1] = new Upgrade ("Root Binding", "Entangle enemies in roots to severly slow them down!", 45, stats);
 			
 			stats = new Stat[] {
-				new Stat(Attribute.Slow,"Slow",.1f,"SLW"),
-				new Stat(Attribute.SlowDuration,"Slow Duration",1f,"SLD")
+				new Stat(Attribute.Slow,.1f),
+				new Stat(Attribute.SlowDuration,1f)
 			};
-			upgrades[2] = new Upgrade ("Root Binding", "Entangle enemies in roots to severly slow them down!", 60, stats);
+			tempUpgrades[2] = new Upgrade ("Root Binding", "Entangle enemies in roots to severly slow them down!", 60, stats);
 			
-			earthUpgrades.Add("Root Binding", upgrades);
+			upgrades.Add("Root Binding", tempUpgrades);
 
 
 			//Inferno
-			upgrades = new Upgrade[3];
+			tempUpgrades = new Upgrade[3];
 			stats = new Stat[] {
-				new Stat(Attribute.RateOfFire,"Rate of Fire",1f,"ROF"),
-				new Stat(Attribute.Damage,"Damage",-1f,"SLW")
+				new Stat(Attribute.RateOfFire,1f),
+				new Stat(Attribute.Damage,-1f)
 			};
 			
-			upgrades[0] = new Upgrade ("Inferno", "Devistate enemies with rapidly fired fireballs!", 40, stats);
+			tempUpgrades[0] = new Upgrade ("Inferno", "Devistate enemies with rapidly fired fireballs!", 40, stats);
 			
 			stats = new Stat[] {
-				new Stat(Attribute.RateOfFire,"Rate of Fire",1f,"ROF")
+				new Stat(Attribute.RateOfFire,1f)
 			};
-			upgrades[1] = new Upgrade ("Inferno", "Devistate enemies with rapidly fired fireballs!", 60, stats);
+			tempUpgrades[1] = new Upgrade ("Inferno", "Devistate enemies with rapidly fired fireballs!", 60, stats);
 			
 			stats = new Stat[] {
-				new Stat(Attribute.RateOfFire,"Rate of Fire",1f,"ROF")
+				new Stat(Attribute.RateOfFire,1f)
 			};
-			upgrades[2] = new Upgrade ("Inferno", "Devistate enemies with rapidly fired fireballs!", 80, stats);
+			tempUpgrades[2] = new Upgrade ("Inferno", "Devistate enemies with rapidly fired fireballs!", 80, stats);
 			
-			earthUpgrades.Add("Inferno", upgrades);
+			upgrades.Add("Inferno", tempUpgrades);
 
 
 			//Armageddon
-			upgrades = new Upgrade[3];
+			tempUpgrades = new Upgrade[3];
 			stats = new Stat[] {
-				new Stat(Attribute.AoeDamage,"AOE Damage", 1f,"AOD"),
-				new Stat(Attribute.AoeRange,"AOE Radius",1f,"AOE"),
-				new Stat(Attribute.RateOfFire,"Rate of Fire",-2f,"ROF")
+				new Stat(Attribute.AoeDamage, 1f),
+				new Stat(Attribute.AoeRange,1f),
+				new Stat(Attribute.RateOfFire,-2f)
 			};
 			
-			upgrades[0] = new Upgrade ("Armageddon", "Deal damage to multiple enemies!", 40, stats);
+			tempUpgrades[0] = new Upgrade ("Armageddon", "Deal damage to multiple enemies!", 40, stats);
 			
 			stats = new Stat[] {
-				new Stat(Attribute.AoeDamage,"AOE Damage", 2f,"AOD"),
-				new Stat(Attribute.AoeRange,"AOE Radius",1f,"AOE"),
-				new Stat(Attribute.RateOfFire,"Rate of Fire",-1f,"ROF")
+				new Stat(Attribute.AoeDamage, 2f),
+				new Stat(Attribute.AoeRange,1f),
+				new Stat(Attribute.RateOfFire,-1f)
 			};
-			upgrades[1] = new Upgrade ("Armageddon", "Deal damage to multiple enemies!", 60, stats);
+			tempUpgrades[1] = new Upgrade ("Armageddon", "Deal damage to multiple enemies!", 60, stats);
 			
 			stats = new Stat[] {
-				new Stat(Attribute.AoeDamage,"AOE Damage", 2f,"AOD"),
-				new Stat(Attribute.AoeRange,"AOE Radius",2f,"AOE")
+				new Stat(Attribute.AoeDamage, 2f),
+				new Stat(Attribute.AoeRange,2f)
 			};
-			upgrades[2] = new Upgrade ("Armageddon", "Deal damage to multiple enemies!", 80, stats);
+			tempUpgrades[2] = new Upgrade ("Armageddon", "Deal damage to multiple enemies!", 80, stats);
 			
-			earthUpgrades.Add("Armageddon", upgrades);
+			upgrades.Add("Armageddon", tempUpgrades);
 
 
 			//Burn
-			upgrades = new Upgrade[3];
+			tempUpgrades = new Upgrade[3];
 			stats = new Stat[] {
-				new Stat(Attribute.DamageOverTime,"Damage Over Time", 1f,"DOT"),
-				new Stat(Attribute.RateOfFire,"Rate of Fire",-1f,"ROF")
+				new Stat(Attribute.DamageOverTime, 1f),
+				new Stat(Attribute.RateOfFire,-1f)
 			};
 			
-			upgrades[0] = new Upgrade ("Burn", "Burn an enemy for damage over time!", 20, stats);
+			tempUpgrades[0] = new Upgrade ("Burn", "Burn an enemy for damage over time!", 20, stats);
 			
 			stats = new Stat[] {
-				new Stat(Attribute.DamageOverTime,"Damage Over Time", 1f,"DOT")
+				new Stat(Attribute.DamageOverTime, 1f)
 			};
-			upgrades[1] = new Upgrade ("Burn", "Burn an enemy for damage over time!", 30, stats);
+			tempUpgrades[1] = new Upgrade ("Burn", "Burn an enemy for damage over time!", 30, stats);
 			
 			stats = new Stat[] {
-				new Stat(Attribute.DamageOverTime,"Damage Over Time", 2f,"DOT")
+				new Stat(Attribute.DamageOverTime, 2f)
 			};
-			upgrades[2] = new Upgrade ("Burn", "Burn an enemy for damage over time!", 40, stats);
+			tempUpgrades[2] = new Upgrade ("Burn", "Burn an enemy for damage over time!", 40, stats);
 			
-			earthUpgrades.Add("Burn", upgrades);
+			upgrades.Add("Burn", tempUpgrades);
 
+
+			//Chain Lightning
+			tempUpgrades = new Upgrade[3];
+			stats = new Stat[] {
+				new Stat(Attribute.AoeDamage, 1f),
+				new Stat(Attribute.AoeRange,1f),
+				new Stat(Attribute.RateOfFire,-1f)
+			};
+			
+			tempUpgrades[0] = new Upgrade ("Chain Lightning", "Damage multiple enemies with a web of lightning!", 20, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.AoeDamage,2f),
+				new Stat(Attribute.AoeRange,1f)
+			};
+			tempUpgrades[1] = new Upgrade ("Chain Lightning", "Damage multiple enemies with a web of lightning!", 30, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.AoeDamage,2f),
+				new Stat(Attribute.AoeRange,1f)
+			};
+			tempUpgrades[2] = new Upgrade ("Chain Lightning", "Damage multiple enemies with a web of lightning!", 40, stats);
+			
+			upgrades.Add("Chain Lightning", tempUpgrades);
+
+
+			//Frost
+			tempUpgrades = new Upgrade[3];
+			stats = new Stat[] {
+				new Stat(Attribute.Slow, .1f),
+				new Stat(Attribute.SlowDuration,1f),
+				new Stat(Attribute.Range,-3f)
+			};
+			
+			tempUpgrades[0] = new Upgrade ("Frost", "Freeze your enemies to slow them down!", 20, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.Slow, .1f),
+				new Stat(Attribute.SlowDuration,2f)
+			};
+			tempUpgrades[1] = new Upgrade ("Frost", "Freeze your enemies to slow them down!", 40, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.Slow, .8f),
+				new Stat(Attribute.SlowDuration,1f)
+			};
+			tempUpgrades[2] = new Upgrade ("Frost", "Freeze your enemies to slow them down!", 50, stats);
+			
+			upgrades.Add("Frost", tempUpgrades);
+
+
+			//Lightning Strike
+			tempUpgrades = new Upgrade[3];
+			stats = new Stat[] {
+				new Stat(Attribute.Damage, 1f),
+				new Stat(Attribute.RateOfFire,-1f)
+			};
+			
+			tempUpgrades[0] = new Upgrade ("Lightning Strike", "Strike distant enemies with a bold of lightning!", 30, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.Damage, 1f),
+				new Stat(Attribute.Range, 2f)
+			};
+			tempUpgrades[1] = new Upgrade ("Lightning Strike", "Strike distant enemies with a bold of lightning!", 50, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.Damage, 3f),
+				new Stat(Attribute.Range, 1f)
+			};
+			tempUpgrades[2] = new Upgrade ("Lightning Strike", "Strike distant enemies with a bold of lightning!", 65, stats);
+			
+			upgrades.Add("Lightning Strike", tempUpgrades);
+
+
+			//Poison
+			tempUpgrades = new Upgrade[3];
+			stats = new Stat[] {
+				new Stat(Attribute.DamageOverTime, 1f),
+				new Stat(Attribute.Range,-1f)
+			};
+			
+			tempUpgrades[0] = new Upgrade ("Poison", "Slowly poison enemies!", 20, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.Damage, 2f),
+				new Stat(Attribute.DamageOverTime, 1f)
+			};
+			tempUpgrades[1] = new Upgrade ("Poison", "Slowly poison enemies!", 40, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.DamageOverTime, 3f),
+			};
+			tempUpgrades[2] = new Upgrade ("Poison", "Slowly poison enemies!", 50, stats);
+			
+			upgrades.Add("Poison", tempUpgrades);
+
+			//Mind Control
+			tempUpgrades = new Upgrade[3];
+			stats = new Stat[] {
+				new Stat(Attribute.Damage, -1f),
+				new Stat(Attribute.MindControlDuration,1f)
+			};
+			
+			tempUpgrades[0] = new Upgrade ("Mind Control", "Send enemies back to their spawning ground!", 40, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.MindControlDuration,2f),
+				new Stat(Attribute.RateOfFire, -1f)
+			};
+			tempUpgrades[1] = new Upgrade ("Mind Control", "Send enemies back to their spawning ground!", 70, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.MindControlDuration,3f)
+			};
+			tempUpgrades[2] = new Upgrade ("Mind Control", "Send enemies back to their spawning ground!", 100, stats);
+			
+			upgrades.Add("Mind Control", tempUpgrades);
+
+
+			//Hex
+			tempUpgrades = new Upgrade[3];
+			stats = new Stat[] {
+				new Stat(Attribute.Damage, 1f),
+				new Stat(Attribute.Range,1f)
+			};
+			
+			tempUpgrades[0] = new Upgrade ("Hex", "Damage enemies with a powerful hex!", 20, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.Damage,1f),
+				new Stat(Attribute.Range, 1f)
+			};
+			tempUpgrades[1] = new Upgrade ("Hex", "Damage enemies with a powerful hex!", 30, stats);
+			
+			stats = new Stat[] {
+				new Stat(Attribute.Damage,2f),
+				new Stat(Attribute.Range,2f)
+			};
+			tempUpgrades[2] = new Upgrade ("Hex", "Damage enemies with a powerful hex!", 40, stats);
+			
+			upgrades.Add("Hex", tempUpgrades);
 
 		}
 
@@ -182,7 +324,7 @@ namespace Assets.Scripts.Turrets
 
 	        Debug.Log("Quake Upgrade Level " + turret.UpgradeOneLevel);
 
-			turret.UpgradeTurret(earthUpgrades["Quake"][turret.UpgradeOneLevel], 1);
+			turret.UpgradeTurret(upgrades["Quake"][turret.UpgradeOneLevel], 1);
 		}
 		
 		// Meteor Shower
@@ -199,7 +341,7 @@ namespace Assets.Scripts.Turrets
 
 	        Debug.Log("Meteor Shower Upgrade Level " + turret.UpgradeTwoLevel);
 
-			turret.UpgradeTurret(earthUpgrades["Meteor Shower"][turret.UpgradeTwoLevel], 2);
+			turret.UpgradeTurret(upgrades["Meteor Shower"][turret.UpgradeTwoLevel], 2);
 	    }
 
 	    // Root Binding
@@ -216,7 +358,7 @@ namespace Assets.Scripts.Turrets
 
 	        Debug.Log("Root Binding Upgrade Level " + turret.UpgradeThreeLevel);
 
-			turret.UpgradeTurret(earthUpgrades["Root Binding"][turret.UpgradeThreeLevel], 3);
+			turret.UpgradeTurret(upgrades["Root Binding"][turret.UpgradeThreeLevel], 3);
 		}
 
 	    #endregion
@@ -237,7 +379,7 @@ namespace Assets.Scripts.Turrets
 
 	        Debug.Log("Inferno Upgrade Level " + turret.UpgradeOneLevel);
 
-			turret.UpgradeTurret(earthUpgrades["Inferno"][turret.UpgradeOneLevel], 1);
+			turret.UpgradeTurret(upgrades["Inferno"][turret.UpgradeOneLevel], 1);
 	    }
 
 	    // Armageddon
@@ -254,7 +396,7 @@ namespace Assets.Scripts.Turrets
 
 	        Debug.Log("Armageddon Upgrade Level " + turret.UpgradeTwoLevel);
 
-			turret.UpgradeTurret(earthUpgrades["Armageddon"][turret.UpgradeTwoLevel], 2);
+			turret.UpgradeTurret(upgrades["Armageddon"][turret.UpgradeTwoLevel], 2);
 	    }
 
 	    // Burn
@@ -271,7 +413,7 @@ namespace Assets.Scripts.Turrets
 
 	        Debug.Log("Burn Upgrade Level " + turret.UpgradeThreeLevel);
 			
-			turret.UpgradeTurret(earthUpgrades["Burn"][turret.UpgradeThreeLevel], 3);
+			turret.UpgradeTurret(upgrades["Burn"][turret.UpgradeThreeLevel], 3);
 	    }
 
 	    #endregion
@@ -290,37 +432,9 @@ namespace Assets.Scripts.Turrets
 	        if (MaxLevels(turret))
 	            return;
 
-			ObjectManager objectManager = ObjectManager.GetInstance();
-			int upgradeCost = chainLightningCost;
-			upgradeCost += (int)(upgradeCost * turret.UpgradeOneLevel * costScaling);
-	        if (upgradeCost > objectManager.gameState.playerMoney)
-	            return;
-	        objectManager.gameState.playerMoney -= upgradeCost;
-	        turret.Msrp += upgradeCost / 2;
-
-	        turret.UpgradeOneLevel++;
-	        turret.Level++;
-
 	        Debug.Log("Chain Lightning Upgrade Level " + turret.UpgradeOneLevel);
 
-	        switch (turret.UpgradeOneLevel)
-	        {
-	            case 1:
-	                turret.rateOfFire--;
-	                turret.aoeDamage++;
-	                turret.aoeRange++;
-	                break;
-	            case 2:
-	                turret.rateOfFire--;
-	                turret.DetectionRadius = ++turret.range;
-	                turret.aoeDamage++;
-	                turret.aoeRange++;
-	                break;
-	            case 3:
-	                turret.DetectionRadius = ++turret.range;
-	                turret.aoeDamage++;
-	                break;
-	        }
+			turret.UpgradeTurret(upgrades["Chain Lightning"][turret.UpgradeThreeLevel], 1);
 	    }
 
 	    // Frost
@@ -335,35 +449,10 @@ namespace Assets.Scripts.Turrets
 	        if (MaxLevels(turret))
 	            return;
 
-			ObjectManager objectManager = ObjectManager.GetInstance();
-			int upgradeCost = frostCost;
-			upgradeCost += (int)(upgradeCost * turret.UpgradeTwoLevel * costScaling);
-	        if (upgradeCost > objectManager.gameState.playerMoney)
-	            return;
-	        objectManager.gameState.playerMoney -= upgradeCost;
-	        turret.Msrp += upgradeCost / 2;
-
-	        turret.UpgradeTwoLevel++;
-	        turret.Level++;
-
 	        Debug.Log("Frost Upgrade Level " + turret.UpgradeTwoLevel);
 
-	        switch (turret.UpgradeTwoLevel)
-	        {
-	            case 1:
-	                turret.Slow += .1f;
-	                turret.SlowDuration++;
-	                turret.DetectionRadius = --turret.range;
-	                break;
-	            case 2:
-	                turret.Slow += .1f;
-	                turret.DetectionRadius = --turret.range;
-	                break;
-	            case 3:
-	                turret.Slow += .8f;
-	                turret.DetectionRadius = --turret.range;
-	                break;
-	        }
+			turret.UpgradeTurret(upgrades["Frost"][turret.UpgradeThreeLevel], 2);
+
 	    }
 
 	    // Lightning Strike
@@ -378,34 +467,9 @@ namespace Assets.Scripts.Turrets
 	        if (MaxLevels(turret))
 	            return;
 
-			ObjectManager objectManager = ObjectManager.GetInstance();
-			int upgradeCost = lightningStrikeCost;
-			upgradeCost += (int)(upgradeCost * turret.UpgradeThreeLevel * costScaling);
-	        if (upgradeCost > objectManager.gameState.playerMoney)
-	            return;
-	        objectManager.gameState.playerMoney -= upgradeCost;
-	        turret.Msrp += upgradeCost / 2;
-
-	        turret.UpgradeThreeLevel++;
-	        turret.Level++;
-
 	        Debug.Log("Lightning Strike Upgrade Level " + turret.UpgradeThreeLevel);
-
-	        switch (turret.UpgradeThreeLevel)
-	        {
-	            case 1:
-	                turret.damage++;
-	                turret.rateOfFire--;
-	                break;
-	            case 2:
-	                turret.damage++;
-	                turret.DetectionRadius = ++turret.range;
-	                break;
-	            case 3:
-	                turret.damage++;
-	                turret.DetectionRadius = ++turret.range;
-	                break;
-	        }
+			
+			turret.UpgradeTurret(upgrades["Lightning Strike"][turret.UpgradeThreeLevel], 3);
 	    }
 
 	    #endregion
@@ -424,33 +488,9 @@ namespace Assets.Scripts.Turrets
 	        if (MaxLevels(turret))
 	            return;
 
-			ObjectManager objectManager = ObjectManager.GetInstance();
-			int upgradeCost = poisonCost;
-			upgradeCost += (int)(upgradeCost * turret.UpgradeOneLevel * costScaling);
-	        if (upgradeCost > objectManager.gameState.playerMoney)
-	            return;
-	        objectManager.gameState.playerMoney -= upgradeCost;
-	        turret.Msrp += upgradeCost / 2;
-
-	        turret.UpgradeOneLevel++;
-	        turret.Level++;
-
 	        Debug.Log("Poison Upgrade Level " + turret.UpgradeOneLevel);
 
-	        switch (turret.UpgradeOneLevel)
-	        {
-	            case 1:
-	                turret.DetectionRadius = --turret.range;
-	                turret.damageOverTime++;
-	                break;
-	            case 2:
-	                turret.damage++;
-	                turret.damageOverTime++;
-	                break;
-	            case 3:
-	                turret.damageOverTime++;
-	                break;
-	        }
+			turret.UpgradeTurret(upgrades["Poison"][turret.UpgradeThreeLevel], 1);
 	    }
 
 	    // Mind Control
@@ -465,33 +505,9 @@ namespace Assets.Scripts.Turrets
 	        if (MaxLevels(turret))
 	            return;
 
-			ObjectManager objectManager = ObjectManager.GetInstance();
-			int upgradeCost = mindControlCost;
-			upgradeCost += (int)(upgradeCost * (turret.UpgradeTwoLevel) * costScaling);
-	        if (upgradeCost > objectManager.gameState.playerMoney)
-	            return;
-	        objectManager.gameState.playerMoney -= upgradeCost;
-	        turret.Msrp += upgradeCost / 2;
-
-	        turret.UpgradeTwoLevel++;
-	        turret.Level++;
-
 	        Debug.Log("Mind Control Upgrade Level " + turret.UpgradeTwoLevel);
 
-	        switch (turret.UpgradeTwoLevel)
-	        {
-	            case 1:
-	                turret.damage--;
-	                turret.MindControlDuration++;
-	                break;
-	            case 2:
-	                turret.rateOfFire--;
-	                turret.MindControlDuration++;
-	                break;
-	            case 3:
-	                turret.MindControlDuration++;
-	                break;
-	        }
+			turret.UpgradeTurret(upgrades["Mind Control"][turret.UpgradeThreeLevel], 2);
 	    }
 	    
 	    // Hex
@@ -506,34 +522,9 @@ namespace Assets.Scripts.Turrets
 	        if (MaxLevels(turret))
 	            return;
 
-			ObjectManager objectManager = ObjectManager.GetInstance();
-			int upgradeCost = hexCost;
-			upgradeCost += (int)(upgradeCost * (turret.UpgradeThreeLevel) * costScaling);
-	        if (upgradeCost > objectManager.gameState.playerMoney)
-	            return;
-	        objectManager.gameState.playerMoney -= upgradeCost;
-	        turret.Msrp += upgradeCost / 2;
-
-	        turret.UpgradeThreeLevel++;
-	        turret.Level++;
-
 	        Debug.Log("Hex Upgrade Level " + turret.UpgradeThreeLevel);
 
-	        switch (turret.UpgradeThreeLevel)
-	        {
-	            case 1:
-	                turret.damage++;
-	                turret.rateOfFire--;
-	                break;
-	            case 2:
-	                turret.damage++;
-	                turret.DetectionRadius = ++turret.range;
-	                break;
-	            case 3:
-	                turret.damage++;
-	                turret.DetectionRadius = ++turret.range;
-	                break;
-	        }
+			turret.UpgradeTurret(upgrades["Hex"][turret.UpgradeThreeLevel], 3);
 	    }
 
 	    #endregion

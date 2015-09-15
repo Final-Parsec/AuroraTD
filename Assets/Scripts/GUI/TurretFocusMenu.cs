@@ -6,16 +6,33 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
+public class UpgradeButton
+{
+	public RawImage image;
+	public Text upgradeName;
+	public Text description;
+	public Text stats;
+	public Button button;
+
+	public UpgradeButton(Button button, Text upgradeName, Text description, Text stats, RawImage image)
+	{
+		this.button = button;
+		this.upgradeName = upgradeName;
+		this.description = description;
+		this.stats = stats;
+		this.image = image;
+	}
+}
 
 public class TurretFocusMenu : MonoBehaviour
 {
-	
 	private Image upgradeBackground;
 	private Image selectedTurretBackground;
 	private Image selectedTurretImage;
-	private List<RawImage> upgradeIcons = new List<RawImage>();
-	private List<Text> upgradeNames = new List<Text>();
-	private List<Button> upgradeButtons = new List<Button>();
+	private Text selectedTurretStats;
+
+	private List<UpgradeButton> upgradeButtons = new List<UpgradeButton>();
+
 	private Text sellPrice;
 	public Dictionary<string,Texture> IconLookup = new Dictionary<string,Texture>();
 	
@@ -148,100 +165,80 @@ public class TurretFocusMenu : MonoBehaviour
 		sellPrice.text = "+(" + selectedTurret.Msrp + ")";
 		
 		bool isMaxLevel = selectedTurret.UpgradeOneLevel + selectedTurret.UpgradeTwoLevel + selectedTurret.UpgradeThreeLevel == 3;
-		foreach(Button button in upgradeButtons)
-			button.interactable = !isMaxLevel;
+		foreach(UpgradeButton button in upgradeButtons)
+			button.button.interactable = !isMaxLevel;
 		
 		upgradeBackground.color = new Color(SelectedTurret.focusMenuRed, SelectedTurret.focusMenuGreen, SelectedTurret.focusMenuBlue, .8f);
 		selectedTurretBackground.color = new Color(SelectedTurret.focusMenuRed, SelectedTurret.focusMenuGreen, SelectedTurret.focusMenuBlue, .8f);
+
+		selectedTurretStats.text = selectedTurret.GetStats ();
 		
-		upgradeNames[0].text = "";
-		upgradeNames[1].text = "";
-		upgradeNames[2].text = "";
+		upgradeButtons[0].upgradeName.text = "";
+		upgradeButtons[1].upgradeName.text = "";
+		upgradeButtons[2].upgradeName.text = "";
+
+		upgradeButtons[0].description.text = "";
+		upgradeButtons[1].description.text = "";
+		upgradeButtons[2].description.text = "";
+
+		upgradeButtons[0].stats.text = "";
+		upgradeButtons[1].stats.text = "";
+		upgradeButtons[2].stats.text = "";
 		
 		switch (SelectedTurret.TurretType)
 		{
 			
 		case TurretType.EarthTurret:
-			if (selectedTurret.UpgradeOneLevel + selectedTurret.UpgradeTwoLevel + selectedTurret.UpgradeThreeLevel != 3)
-			{
-				upgradeNames[0].text =  TurretUpgrades.earthUpgrades["Quake"][selectedTurret.UpgradeOneLevel].Cost+" ";
-				upgradeNames[1].text =  TurretUpgrades.earthUpgrades["Meteor Shower"][selectedTurret.UpgradeTwoLevel].Cost+" ";
-				upgradeNames[2].text =  TurretUpgrades.earthUpgrades["Root Binding"][selectedTurret.UpgradeThreeLevel].Cost+" ";
-			}
-			
-			upgradeNames[0].text += "Quake";
-			upgradeNames[1].text += "Meteor Shower";
-			upgradeNames[2].text += "Root Binding";
-			
-			upgradeIcons[0].texture = IconLookup["Quake"];
-			upgradeIcons[1].texture = IconLookup["Meteor Shower"];
-			upgradeIcons[2].texture = IconLookup["Root Binding"];
-			
-			
+			UpdateUpgradeButton("Quake", "Meteor Shower", "Root Binding");
 			break;
 		case TurretType.FireTurret:
-			if (selectedTurret.UpgradeOneLevel + selectedTurret.UpgradeTwoLevel + selectedTurret.UpgradeThreeLevel != 3)
-			{
-				upgradeNames[0].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.infernoCost, selectedTurret.UpgradeOneLevel)+" ";
-				upgradeNames[1].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.armageddonCost, selectedTurret.UpgradeTwoLevel)+" ";
-				upgradeNames[2].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.burnCost, selectedTurret.UpgradeThreeLevel)+" ";
-			}
-			
-			upgradeNames[0].text += "Inferno";
-			upgradeNames[1].text += "Armageddon";
-			upgradeNames[2].text += "Burn";
-			
-			upgradeIcons[0].texture = IconLookup["Inferno"];
-			upgradeIcons[1].texture = IconLookup["Armageddon"];
-			upgradeIcons[2].texture = IconLookup["Burn"];
-			
-			
+			UpdateUpgradeButton("Inferno", "Armageddon", "Burn");			
 			break;
 		case TurretType.StormTurret:
-			if (selectedTurret.UpgradeOneLevel + selectedTurret.UpgradeTwoLevel + selectedTurret.UpgradeThreeLevel != 3)
-			{
-				upgradeNames[0].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.chainLightningCost, selectedTurret.UpgradeOneLevel)+" ";
-				upgradeNames[1].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.frostCost, selectedTurret.UpgradeTwoLevel)+" ";
-				upgradeNames[2].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.lightningStrikeCost, selectedTurret.UpgradeThreeLevel)+" ";
-			}
-			
-			upgradeNames[0].text += "Chain Lightning";
-			upgradeNames[1].text += "Frost";
-			upgradeNames[2].text += "Lightning Strike";
-			
-			upgradeIcons[0].texture = IconLookup["Chain Lightning"];
-			upgradeIcons[1].texture = IconLookup["Frost"];
-			upgradeIcons[2].texture = IconLookup["Lightning Strike"];
-			
+			UpdateUpgradeButton("Chain Lightning", "Frost", "Lightning Strike");			
 			break;
 		case TurretType.VoodooTurret:
-			if (selectedTurret.UpgradeOneLevel + selectedTurret.UpgradeTwoLevel + selectedTurret.UpgradeThreeLevel != 3)
-			{
-				upgradeNames[0].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.poisonCost, selectedTurret.UpgradeOneLevel)+" ";
-				upgradeNames[1].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.mindControlCost, selectedTurret.UpgradeTwoLevel)+" ";
-				upgradeNames[2].text =  TurretUpgrades.GetUpgradeCost(TurretUpgrades.hexCost, selectedTurret.UpgradeThreeLevel)+" ";
-			}
-			
-			upgradeNames[0].text += "Poison";
-			upgradeNames[1].text += "Mind Control";
-			upgradeNames[2].text += "Hex";
-			
-			upgradeIcons[0].texture = IconLookup["Poison"];
-			upgradeIcons[1].texture = IconLookup["Mind Control"];
-			upgradeIcons[2].texture = IconLookup["Hex"];
-			
+			UpdateUpgradeButton("Poison", "Mind Control", "Hex");
 			break;
 		}
 		
 		
 		CorrectUpgradeNumbers();
 	}
+
+	private void UpdateUpgradeButton(string upgrade1, string upgrade2, string upgrade3)
+	{
+		if (selectedTurret.UpgradeOneLevel + selectedTurret.UpgradeTwoLevel + selectedTurret.UpgradeThreeLevel != 3)
+		{
+			upgradeButtons[0].upgradeName.text =  TurretUpgrades.upgrades[upgrade1][selectedTurret.UpgradeOneLevel].Cost+" ";
+			upgradeButtons[1].upgradeName.text =  TurretUpgrades.upgrades[upgrade2][selectedTurret.UpgradeTwoLevel].Cost+" ";
+			upgradeButtons[2].upgradeName.text =  TurretUpgrades.upgrades[upgrade3][selectedTurret.UpgradeThreeLevel].Cost+" ";
+
+			upgradeButtons[0].description.text =  TurretUpgrades.upgrades[upgrade1][selectedTurret.UpgradeOneLevel].Description;
+			upgradeButtons[1].description.text =  TurretUpgrades.upgrades[upgrade2][selectedTurret.UpgradeTwoLevel].Description;
+			upgradeButtons[2].description.text =  TurretUpgrades.upgrades[upgrade3][selectedTurret.UpgradeThreeLevel].Description;
+			
+			upgradeButtons[0].stats.text =  TurretUpgrades.upgrades[upgrade1][selectedTurret.UpgradeOneLevel].GetPrettyStats();
+			upgradeButtons[1].stats.text =  TurretUpgrades.upgrades[upgrade2][selectedTurret.UpgradeTwoLevel].GetPrettyStats();
+			upgradeButtons[2].stats.text =  TurretUpgrades.upgrades[upgrade3][selectedTurret.UpgradeThreeLevel].GetPrettyStats();
+		}
+		
+		upgradeButtons[0].upgradeName.text += upgrade1;
+		upgradeButtons[1].upgradeName.text += upgrade2;
+		upgradeButtons[2].upgradeName.text += upgrade3;
+		
+		upgradeButtons[0].image.texture = IconLookup[upgrade1];
+		upgradeButtons[1].image.texture = IconLookup[upgrade2];
+		upgradeButtons[2].image.texture = IconLookup[upgrade3];
+		
+
+	}
 	
 	private void CorrectUpgradeNumbers()
 	{
-		upgradeNames[0].text += " "+IntToI(selectedTurret.UpgradeOneLevel);
-		upgradeNames[1].text += " "+IntToI(selectedTurret.UpgradeTwoLevel);
-		upgradeNames[2].text += " "+IntToI(selectedTurret.UpgradeThreeLevel);
+		upgradeButtons[0].upgradeName.text += " "+IntToI(selectedTurret.UpgradeOneLevel);
+		upgradeButtons[1].upgradeName.text += " "+IntToI(selectedTurret.UpgradeTwoLevel);
+		upgradeButtons[2].upgradeName.text += " "+IntToI(selectedTurret.UpgradeThreeLevel);
 	}
 	
 	private string IntToI(int num)
@@ -268,17 +265,21 @@ public class TurretFocusMenu : MonoBehaviour
 		upgradeBackground = GameObject.FindGameObjectWithTag(Tags.upgradePanel).GetComponent<Image>();
 		selectedTurretBackground = GameObject.FindGameObjectWithTag(Tags.selectedTurretPanel).GetComponent<Image> ();
 		selectedTurretImage = GameObject.FindGameObjectWithTag(Tags.selectedTurretPanel).transform.FindChild("SelectedImage").GetComponent<Image> ();
+		selectedTurretStats = GameObject.FindGameObjectWithTag (Tags.selectedTurretPanel).transform.Find ("TurretStats").GetComponent<Text> ();
 		
 		int upgradeType = 0;
 		foreach (GameObject obj in GameObject.FindGameObjectsWithTag(Tags.upgradeButton))
 		{
 			// The struggle
 			int upTypeReal = upgradeType;
-			
-			upgradeIcons.Add (obj.transform.Find("UpgradeImage").GetComponent<RawImage> ());
-			upgradeNames.Add(obj.transform.Find("UpgradeName").GetComponent<Text>());
-			upgradeButtons.Add(obj.GetComponent<Button>());
-			
+
+			UpgradeButton upgradeButton = new UpgradeButton(obj.GetComponent<Button>(),obj.transform.Find("UpgradeName").GetComponent<Text>(),
+			                                                obj.transform.Find("UpgradeDescription").GetComponent<Text>(),
+			                                                obj.transform.Find("UpgradeStats").GetComponent<Text>(),
+			                                                obj.transform.Find("UpgradeImage").GetComponent<RawImage> ());
+
+			upgradeButtons.Add(upgradeButton);
+
 			UnityEngine.Events.UnityAction action1 = () => { Upgrade(upTypeReal); };
 			obj.GetComponent<Button>().onClick.AddListener(action1);
 			upgradeType++;
@@ -315,4 +316,5 @@ public class TurretFocusMenu : MonoBehaviour
 	}
 	
 	#endregion
+
 }
