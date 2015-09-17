@@ -1,11 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GUI\TurretFocusMenu.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Map.cs">
     <Files>
-      <File FileName="Assets\Scripts\GUI\TurretFocusMenu.cs" Line="268" Column="104" />
-      <File FileName="Assets\Scripts\Turrets\TurretUpgrades.cs" Line="514" Column="54" />
-      <File FileName="Assets\Scripts\Turrets\Upgrade.cs" Line="62" Column="37" />
-      <File FileName="c:\Users\MABauer\Documents\GitHub\AuroraTD\Assets\Scripts\Turrets\Turret.cs" Line="314" Column="16" />
+      <File FileName="Assets\Scripts\GUI\TurretFocusMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Turrets\TurretUpgrades.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Turrets\Upgrade.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\MABauer\Documents\GitHub\AuroraTD\Assets\Scripts\Turrets\Turret.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Map.cs" Line="409" Column="45" />
+      <File FileName="Assets\Scripts\GUI\DeathIntAction.cs" Line="36" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

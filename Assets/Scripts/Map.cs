@@ -407,7 +407,6 @@ public class Map : MonoBehaviour
 		gridTexture = new Texture2D (size_x, size_z);
 		gridTexture.wrapMode = TextureWrapMode.Clamp;
 		gridTexture.filterMode = FilterMode.Point;
-		gridTexture.alphaIsTransparency = true;
 		GetComponent<Renderer>().material.mainTexture = gridTexture;
 
 		foreach (Node node in nodes) {
