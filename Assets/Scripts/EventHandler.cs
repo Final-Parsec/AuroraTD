@@ -25,7 +25,7 @@ public class EventHandler : MonoBehaviour
 	void Update ()
 	{
 		//Debug.Log (objectManager.gameState.optionsOn);
-		if (objectManager.gameState.optionsOn)
+		if (objectManager.gameState.optionsOn || objectManager.TurretFocusMenu.isActive)
 			return;
 
 		// Left Click Down & Tuoch Event
@@ -39,12 +39,6 @@ public class EventHandler : MonoBehaviour
 			
 			if (objectManager.TurretFocusMenu.SelectedTurret == null) {
 				objectManager.TurretFactory.PlaceOrSelectTurret(mousePosition);
-			}
-			else {
-
-				if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {
-                    objectManager.TurretFocusMenu.SelectedTurret = null;
-				}
 			}
 		}
 		

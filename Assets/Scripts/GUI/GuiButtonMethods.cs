@@ -120,6 +120,7 @@ public class GuiButtonMethods : MonoBehaviour
 
 	private void EndGame(string conditionText)
 	{
+		objectManager.Map.ad.ShowInterstitial ();
 		objectManager.Map.SetGrid(false);
 		
 		gameOverScreen.SetActive (true);

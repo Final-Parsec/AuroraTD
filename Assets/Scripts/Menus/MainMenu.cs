@@ -11,8 +11,14 @@ public class MainMenu : MonoBehaviour
 
 	int menuNum;
 
+	GoogleMobileAdsScript ad;
+
 	// Use this for initialization
 	void Start () {
+		ad = GameObject.FindGameObjectWithTag("Ad").GetComponent<GoogleMobileAdsScript>();
+		ad.RequestBanner ();
+		ad.ShowBanner();
+
 		_camera = GameObject.Find("Main Camera").GetComponent<MenuCameraLogic>();
 		menuNum = 0;
 	}
@@ -60,6 +66,8 @@ public class MainMenu : MonoBehaviour
     }
 
 	public void GoToGame(){
+		ad.HideBanner ();
+
 		ObjectManager objectManager = ObjectManager.GetInstance();
 		objectManager.gameState = gameState;
 		Application.LoadLevel ("Scene");

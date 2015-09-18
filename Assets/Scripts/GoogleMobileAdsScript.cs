@@ -2,8 +2,9 @@ using System;
 using UnityEngine;
 using GoogleMobileAds;
 using GoogleMobileAds.Api;
+using System.Collections;
 
-public class GoogleMobileAdsDemoHandler : IInAppPurchaseHandler
+public class GoogleMobileAdsHandler : IInAppPurchaseHandler
 {
     private readonly string[] validSkus = { "android.test.purchased" };
 
@@ -11,7 +12,7 @@ public class GoogleMobileAdsDemoHandler : IInAppPurchaseHandler
     public void OnInAppPurchaseFinished(IInAppPurchaseResult result)
     {
         result.FinishPurchase();
-        GoogleMobileAdsDemoScript.OutputMessage = "Purchase Succeeded! Credit user here.";
+        GoogleMobileAdsScript.OutputMessage = "Purchase Succeeded! Credit user here.";
     }
 
     //Check SKU against valid SKUs.
@@ -34,84 +35,33 @@ public class GoogleMobileAdsDemoHandler : IInAppPurchaseHandler
 }
 
 // Example script showing how to invoke the Google Mobile Ads Unity plugin.
-public class GoogleMobileAdsDemoScript : MonoBehaviour
+public class GoogleMobileAdsScript : MonoBehaviour
 {
 
     private BannerView bannerView;
     private InterstitialAd interstitial;
     private static string outputMessage = "";
 
+	public bool interstitialReady = false;
+
     public static string OutputMessage
     {
         set { outputMessage = value; }
     }
 
-    void OnGUI()
+	void Awake()
+	{
+	}
+
+    public void RequestBanner()
     {
-        // Puts some basic buttons onto the screen.
-        GUI.skin.button.fontSize = (int) (0.05f * Screen.height);
-        GUI.skin.label.fontSize = (int) (0.025f * Screen.height);
+		if (bannerView != null)
+			bannerView.Destroy ();
 
-        Rect requestBannerRect = new Rect(0.1f * Screen.width, 0.05f * Screen.height,
-                                   0.8f * Screen.width, 0.1f * Screen.height);
-        if (GUI.Button(requestBannerRect, "Request Banner"))
-        {
-            RequestBanner();
-        }
-
-        Rect showBannerRect = new Rect(0.1f * Screen.width, 0.175f * Screen.height,
-                                       0.8f * Screen.width, 0.1f * Screen.height);
-        if (GUI.Button(showBannerRect, "Show Banner"))
-        {
-            bannerView.Show();
-        }
-
-        Rect hideBannerRect = new Rect(0.1f * Screen.width, 0.3f * Screen.height,
-                                       0.8f * Screen.width, 0.1f * Screen.height);
-        if (GUI.Button(hideBannerRect, "Hide Banner"))
-        {
-            bannerView.Hide();
-        }
-
-        Rect destroyBannerRect = new Rect(0.1f * Screen.width, 0.425f * Screen.height,
-                                          0.8f * Screen.width, 0.1f * Screen.height);
-        if (GUI.Button(destroyBannerRect, "Destroy Banner"))
-        {
-            bannerView.Destroy();
-        }
-
-        Rect requestInterstitialRect = new Rect(0.1f * Screen.width, 0.55f * Screen.height,
-                                                0.8f * Screen.width, 0.1f * Screen.height);
-        if (GUI.Button(requestInterstitialRect, "Request Interstitial"))
-        {
-            RequestInterstitial();
-        }
-
-        Rect showInterstitialRect = new Rect(0.1f * Screen.width, 0.675f * Screen.height,
-                                             0.8f * Screen.width, 0.1f * Screen.height);
-        if (GUI.Button(showInterstitialRect, "Show Interstitial"))
-        {
-            ShowInterstitial();
-        }
-
-        Rect destroyInterstitialRect = new Rect(0.1f * Screen.width, 0.8f * Screen.height,
-                                                0.8f * Screen.width, 0.1f * Screen.height);
-        if (GUI.Button(destroyInterstitialRect, "Destroy Interstitial"))
-        {
-            interstitial.Destroy();
-        }
-
-        Rect textOutputRect = new Rect(0.1f * Screen.width, 0.925f * Screen.height,
-                                   0.8f * Screen.width, 0.05f * Screen.height);
-        GUI.Label(textOutputRect, outputMessage);
-    }
-
-    private void RequestBanner()
-    {
         #if UNITY_EDITOR
             string adUnitId = "unused";
         #elif UNITY_ANDROID
-		string adUnitId = "ca-app-pub-2481366852569675/7189346744";
+		string adUnitId = "ca-app-pub-2481366852569675/8450597146";
         #elif UNITY_IPHONE
             string adUnitId = "INSERT_IOS_BANNER_AD_UNIT_ID_HERE";
         #else
@@ -131,8 +81,11 @@ public class GoogleMobileAdsDemoScript : MonoBehaviour
         bannerView.LoadAd(createAdRequest());
     }
 
-    private void RequestInterstitial()
+    public void RequestInterstitial()
     {
+		if (interstitial != null)
+			interstitial.Destroy ();
+
         #if UNITY_EDITOR
             string adUnitId = "unused";
         #elif UNITY_ANDROID
@@ -152,7 +105,7 @@ public class GoogleMobileAdsDemoScript : MonoBehaviour
         interstitial.AdClosing += HandleInterstitialClosing;
         interstitial.AdClosed += HandleInterstitialClosed;
         interstitial.AdLeftApplication += HandleInterstitialLeftApplication;
-        GoogleMobileAdsDemoHandler handler = new GoogleMobileAdsDemoHandler();
+        GoogleMobileAdsHandler handler = new GoogleMobileAdsHandler();
         interstitial.SetInAppPurchaseHandler(handler);
         // Load an interstitial ad.
         interstitial.LoadAd(createAdRequest());
@@ -163,7 +116,6 @@ public class GoogleMobileAdsDemoScript : MonoBehaviour
     {
         return new AdRequest.Builder()
                 .AddTestDevice(AdRequest.TestDeviceSimulator)
-                .AddTestDevice("0123456789ABCDEF0123456789ABCDEF")
                 .AddKeyword("game")
                 .SetGender(Gender.Male)
                 .SetBirthday(new DateTime(1985, 1, 1))
@@ -173,48 +125,53 @@ public class GoogleMobileAdsDemoScript : MonoBehaviour
 
     }
 
-    private void ShowInterstitial()
+	public void ShowInterstitial()
     {
         if (interstitial.IsLoaded())
         {
             interstitial.Show();
         }
-        else
-        {
-            print("Interstitial is not ready yet.");
-        }
     }
+
+	public void ShowBanner()
+	{
+		bannerView.Show ();
+	}
+
+	public void HideBanner()
+	{
+		bannerView.Hide();
+	}
+
+	public void DestroyBanner()
+	{
+		bannerView.Destroy();
+	}
 
     #region Banner callback handlers
 
     public void HandleAdLoaded(object sender, EventArgs args)
     {
-        print("HandleAdLoaded event received.");
     }
 
     public void HandleAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
     {
-        print("HandleFailedToReceiveAd event received with message: " + args.Message);
     }
 
     public void HandleAdOpened(object sender, EventArgs args)
     {
-        print("HandleAdOpened event received");
     }
 
     void HandleAdClosing(object sender, EventArgs args)
     {
-        print("HandleAdClosing event received");
     }
 
     public void HandleAdClosed(object sender, EventArgs args)
     {
-        print("HandleAdClosed event received");
     }
 
     public void HandleAdLeftApplication(object sender, EventArgs args)
     {
-        print("HandleAdLeftApplication event received");
     }
 
     #endregion
@@ -223,7 +180,7 @@ public class GoogleMobileAdsDemoScript : MonoBehaviour
 
     public void HandleInterstitialLoaded(object sender, EventArgs args)
     {
-        print("HandleInterstitialLoaded event received.");
+		interstitialReady = true;
     }
 
     public void HandleInterstitialFailedToLoad(object sender, AdFailedToLoadEventArgs args)

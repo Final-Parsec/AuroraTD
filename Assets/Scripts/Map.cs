@@ -35,6 +35,8 @@ public class Map : MonoBehaviour
 	private float nextWaveSpawnEvent;
 	public bool playerTriggeredWave;
 
+	
+	public GoogleMobileAdsScript ad;
 
 	void Awake()
 	{
@@ -50,10 +52,12 @@ public class Map : MonoBehaviour
 		destinationTransform.position = nodes[size_x-2, 0].unityPosition;
 		destinationTransform.position = new Vector3(destinationTransform.position.x, -.9f, destinationTransform.position.z);
 	}
-
+	
 	// Use this for initialization
-	void Start ()
-	{
+	void Start () {
+		ad = GameObject.FindGameObjectWithTag("Ad").GetComponent<GoogleMobileAdsScript>();
+		ad.RequestInterstitial ();
+
 		destinationNode = nodes[size_x - 1, 0];
 		destinationNode.isBuildable = false;
 		enemySpawnNode = nodes[0, size_z - 1];
