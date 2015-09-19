@@ -42,7 +42,7 @@ public class GoogleMobileAdsScript : MonoBehaviour
     private InterstitialAd interstitial;
     private static string outputMessage = "";
 
-	public bool interstitialReady = false;
+	public bool disableAds = false;
 
     public static string OutputMessage
     {
@@ -55,6 +55,9 @@ public class GoogleMobileAdsScript : MonoBehaviour
 
     public void RequestBanner()
     {
+		if (disableAds)
+			return;
+
 		if (bannerView != null)
 			bannerView.Destroy ();
 
@@ -83,6 +86,9 @@ public class GoogleMobileAdsScript : MonoBehaviour
 
     public void RequestInterstitial()
     {
+		if (disableAds)
+			return;
+
 		if (interstitial != null)
 			interstitial.Destroy ();
 
@@ -127,6 +133,9 @@ public class GoogleMobileAdsScript : MonoBehaviour
 
 	public void ShowInterstitial()
     {
+		if (disableAds)
+			return;
+
         if (interstitial.IsLoaded())
         {
             interstitial.Show();
@@ -135,16 +144,25 @@ public class GoogleMobileAdsScript : MonoBehaviour
 
 	public void ShowBanner()
 	{
+		if (disableAds)
+			return;
+
 		bannerView.Show ();
 	}
 
 	public void HideBanner()
 	{
+		if (disableAds)
+			return;
+
 		bannerView.Hide();
 	}
 
 	public void DestroyBanner()
 	{
+		if (disableAds)
+			return;
+
 		bannerView.Destroy();
 	}
 
@@ -180,7 +198,6 @@ public class GoogleMobileAdsScript : MonoBehaviour
 
     public void HandleInterstitialLoaded(object sender, EventArgs args)
     {
-		interstitialReady = true;
     }
 
     public void HandleInterstitialFailedToLoad(object sender, AdFailedToLoadEventArgs args)
