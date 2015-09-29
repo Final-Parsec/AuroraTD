@@ -31,8 +31,5 @@ public class DeathIntAction : MonoBehaviour {
 		transform.position = new Vector3 (transform.position.x - moveVector.x * (speed * (int)objectManager.gameState.GameSpeed) * Time.deltaTime,
 		                                  transform.position.y,
 		                                  transform.position.z - moveVector.z * (speed * (int)objectManager.gameState.GameSpeed) * Time.deltaTime);
-		
-		// unit has reached the waypoint
-		Vector3 position = transform.position;
 	}
 }

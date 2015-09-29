@@ -341,7 +341,8 @@ public class GuiButtonMethods : MonoBehaviour
 
 	public void PlayDefaultSound()
 	{
-		if(!objectManager.gameState.isMuted)
-			audioSource.PlayOneShot(audioClips["defaultPress"]);
+		if (!objectManager.gameState.isMuted) {
+			audioSource.PlayOneShot (audioClips ["defaultPress"]);
+		}
 	}
 }

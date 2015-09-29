@@ -130,7 +130,7 @@ public class Map : MonoBehaviour
 							Array values = Enum.GetValues(typeof(ObstacleType));
 							ObstacleType randomObstacle = (ObstacleType)values.GetValue(random.Next(values.Length));
 							GameObject obstaclePrefab = obstaclePrefabs[(int)randomObstacle];
-							GameObject obstacle = Instantiate (obstaclePrefab, spawnPosition, obstaclePrefab.transform.rotation) as GameObject;							
+							Instantiate (obstaclePrefab, spawnPosition, obstaclePrefab.transform.rotation);							
 						}
 						else if(x%5==4 && z%5==4) {
 
@@ -427,7 +427,6 @@ public class Map : MonoBehaviour
 
 	public void SetGrid(bool flag)
 	{
-		float alpha = GetComponent<Renderer> ().material.color.a;
 		GetComponent<Renderer> ().material.color = new Color (1f, 1f, 1f, 1f * (flag?1f:0f));
 	}
 }
