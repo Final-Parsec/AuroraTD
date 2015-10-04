@@ -64,14 +64,14 @@ public class GoogleMobileAdsScript : MonoBehaviour
         #if UNITY_EDITOR
             string adUnitId = "unused";
         #elif UNITY_ANDROID
-		string adUnitId = "ca-app-pub-2481366852569675/8450597146";
-        #elif UNITY_IPHONE
+		string adUnitId = "ca-app-pub-2481366852569675/5290687543";
+#elif UNITY_IPHONE
             string adUnitId = "INSERT_IOS_BANNER_AD_UNIT_ID_HERE";
-        #else
+#else
             string adUnitId = "unexpected_platform";
-        #endif
+#endif
 
-        // Create a 320x50 banner at the top of the screen.
+            // Create a 320x50 banner at the top of the screen.
         bannerView = new BannerView(adUnitId, AdSize.SmartBanner, AdPosition.Top);
         // Register for ad events.
         bannerView.AdLoaded += HandleAdLoaded;
@@ -95,14 +95,14 @@ public class GoogleMobileAdsScript : MonoBehaviour
         #if UNITY_EDITOR
             string adUnitId = "unused";
         #elif UNITY_ANDROID
-		string adUnitId = "ca-app-pub-2481366852569675/7189346744";
-        #elif UNITY_IPHONE
+		string adUnitId = "ca-app-pub-2481366852569675/6767420744";
+#elif UNITY_IPHONE
             string adUnitId = "INSERT_IOS_INTERSTITIAL_AD_UNIT_ID_HERE";
-        #else
+#else
             string adUnitId = "unexpected_platform";
-        #endif
+#endif
 
-        // Create an interstitial.
+            // Create an interstitial.
         interstitial = new InterstitialAd(adUnitId);
         // Register for ad events.
         interstitial.AdLoaded += HandleInterstitialLoaded;
