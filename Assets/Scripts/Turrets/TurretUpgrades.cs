@@ -25,6 +25,7 @@ namespace Assets.Scripts.Turrets
 
 		public static void MakeUpgrades()
 		{
+            upgrades = new Dictionary<string, Upgrade[]>();
 
 			//Quake
 			Stat[] stats = {
