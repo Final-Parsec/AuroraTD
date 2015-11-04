@@ -435,7 +435,7 @@ namespace Assets.Scripts.Turrets
 
 	        Debug.Log("Chain Lightning Upgrade Level " + turret.UpgradeOneLevel);
 
-			turret.UpgradeTurret(upgrades["Chain Lightning"][turret.UpgradeThreeLevel], 1);
+			turret.UpgradeTurret(upgrades["Chain Lightning"][turret.UpgradeOneLevel], 1);
 	    }
 
 	    // Frost
@@ -452,7 +452,7 @@ namespace Assets.Scripts.Turrets
 
 	        Debug.Log("Frost Upgrade Level " + turret.UpgradeTwoLevel);
 
-			turret.UpgradeTurret(upgrades["Frost"][turret.UpgradeThreeLevel], 2);
+			turret.UpgradeTurret(upgrades["Frost"][turret.UpgradeTwoLevel], 2);
 
 	    }
 
@@ -491,7 +491,7 @@ namespace Assets.Scripts.Turrets
 
 	        Debug.Log("Poison Upgrade Level " + turret.UpgradeOneLevel);
 
-			turret.UpgradeTurret(upgrades["Poison"][turret.UpgradeThreeLevel], 1);
+			turret.UpgradeTurret(upgrades["Poison"][turret.UpgradeOneLevel], 1);
 	    }
 
 	    // Mind Control
@@ -508,7 +508,7 @@ namespace Assets.Scripts.Turrets
 
 	        Debug.Log("Mind Control Upgrade Level " + turret.UpgradeTwoLevel);
 
-			turret.UpgradeTurret(upgrades["Mind Control"][turret.UpgradeThreeLevel], 2);
+			turret.UpgradeTurret(upgrades["Mind Control"][turret.UpgradeTwoLevel], 2);
 	    }
 	    
 	    // Hex

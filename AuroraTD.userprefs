@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EventHandler.cs">
     <Files>
-      <File FileName="Assets\Scripts\Enums.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Map.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Menus\MainMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GoogleMobileAdsScript.cs" Line="154" Column="3" />
-      <File FileName="Assets\Scripts\EventHandler.cs" Line="36" Column="57" />
+      <File FileName="Assets\Scripts\Wave.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Turrets\TurretUpgrades.cs" Line="525" Column="4" />
+      <File FileName="Assets\Scripts\Turrets\Turret.cs" Line="308" Column="27" />
+      <File FileName="..\Corsair\Assets\Scripts\EventHandler.cs" Line="55" Column="5" />
+      <File FileName="Assets\Scripts\EventHandler.cs" Line="32" Column="99" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
